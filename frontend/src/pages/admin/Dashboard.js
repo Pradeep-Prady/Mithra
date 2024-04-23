@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getDashboard } from "./../../actions/authActions";
 
 export default function Dashboard() {
-  const navigate = useNavigate();
-
   const dispatch = useDispatch();
   const { productsCount, subCategoryCount, categoryCount } = useSelector(
     (state) => state.authState

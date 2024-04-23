@@ -1,52 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import mainImg from "../../assets/mithralogo.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategoryForNav } from "../../actions/categoryActions";
-import Dropdown from "./Dropdown";
 import DropDownSm from "./DropDownSm";
 
 export default function Footer() {
-  // const navLinks = [
-  //   {
-  //     nav: "Home",
-  //     link: "/",
-  //   },
-  //   {
-  //     nav: "About Us",
-  //     link: "/about",
-  //   },
-  //   {
-  //     nav: "Mattresses",
-  //     link: "/subcategory/661e1b1b5192dc474ddad172",
-  //   },
-  //   {
-  //     nav: "Pillows",
-  //     link: "/subcategory/661e1b1b5192dc474ddad172",
-  //   },
-
-  //   {
-  //     nav: "Sofa Makeover",
-  //     link: "/subcategory/661e1b1b5192dc474ddad172",
-  //   },
-  //   {
-  //     nav: "Furniture",
-  //     link: "/subcategory/661e1b1b5192dc474ddad172",
-  //   },
-  //   {
-  //     nav: "Bedroom Accessories",
-  //     link: "/subcategory/661e1b1b5192dc474ddad172",
-  //   },
-  //   {
-  //     nav: "Awards",
-  //     link: "/awards",
-  //   },
-  //   {
-  //     nav: "Others",
-  //     link: "/others",
-  //   },
-  // ];
-
   const navLinks = [
     {
       nav: "Home",
@@ -56,35 +15,6 @@ export default function Footer() {
       nav: "About Us",
       link: "/about",
     },
-    // {
-    //   nav: "Mattresses",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Pillows",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-
-    // {
-    //   nav: "Sofa Makeover",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Furniture",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Bedroom Accessories",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Awards",
-    //   link: "/awards",
-    // },
-    // {
-    //   nav: "Others",
-    //   link: "/",
-    // },
   ];
 
   const navLinks2 = [
@@ -92,17 +22,9 @@ export default function Footer() {
       nav: "Awards",
       link: "/awards",
     },
-    // {
-    //   nav: "Others",
-    //   link: "/",
-    // },
   ];
-  const [open, setOpen] = useState(false);
   const { categoriesForNav } = useSelector((state) => state.categoryState);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -127,17 +49,6 @@ export default function Footer() {
                 </Link>
               ))}
 
-              {/* <div className="flex flex-col justify-start items-start my-2 ">
-                {categoriesForNav?.length > 0 &&
-                  categoriesForNav?.map((category) => (
-                    <Dropdown
-                      key={category._id}
-                      category={category}
-                      handleClose={handleClose}
-                    />
-                  ))}
-              </div> */}
-
               <div className="w-full items-start my-3 flex flex-col text-black">
                 {categoriesForNav?.length > 0 &&
                   categoriesForNav?.map((category) => (
@@ -145,7 +56,6 @@ export default function Footer() {
                       color={"black"}
                       key={category._id}
                       category={category}
-                      handleClose={handleClose}
                     />
                   ))}
 

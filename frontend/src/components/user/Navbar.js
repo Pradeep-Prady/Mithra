@@ -53,10 +53,6 @@ export default function Navbar() {
       nav: "Awards",
       link: "/awards",
     },
-    // {
-    //   nav: "Others",
-    //   link: "/",
-    // },
   ];
   const [open, setOpen] = useState(false);
   const { categoriesForNav } = useSelector((state) => state.categoryState);
@@ -94,8 +90,7 @@ export default function Navbar() {
                   handleClose={handleClose}
                 />
               ))}
-             
-            
+
             <a href="#contact" className="ursor-pointer hover:font-medium">
               Contact
             </a>

@@ -6,7 +6,6 @@ import { clearProductUpdated } from "../../../slices/productSlice";
 import TextEditor from "../../../components/admin/TextEditor";
 
 export default function EditProduct() {
-
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [subCategory, setSubCategory] = useState("");
@@ -101,34 +100,6 @@ export default function EditProduct() {
     };
     reader.readAsDataURL(e.target.files[0]);
   };
-
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   const formData = new FormData();
-  //   formData.append("name", name);
-  //   const imagesArray = [
-  //     mainImage,
-  //     frontImage,
-  //     rightImage,
-  //     backImage,
-  //     leftImage,
-  //   ];
-
-  //   imagesArray?.forEach((image) => {
-  //     formData.append("images", image);
-
-  //     console.log(image)
-  //   });
-
-  //   formData.append("description", descriptionEditorValue);
-  //   formData.append("subCategory", subCategory);
-  //   formData.append("specification", specificationEditorValue);
-  //   formData.append("additionalinfo", additionalinfoEditorValue);
-  //   formData.append("imagesCleared", imagesCleared);
-
-  //   dispatch(updateProduct(formData, id));
-  // };
 
   const handleImagesCleared = () => {
     setImagesCleared(true);

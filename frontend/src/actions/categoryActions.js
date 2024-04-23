@@ -90,7 +90,6 @@ export const deleteCategory = (id) => async (dispatch) => {
   }
 };
 
-
 export const getAllCategoryForNav = () => async (dispatch) => {
   try {
     dispatch(getAllCategoryForNavRequest());

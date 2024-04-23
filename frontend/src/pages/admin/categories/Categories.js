@@ -29,8 +29,6 @@ export default function Categories() {
         </div>
       </div>
 
-      {/* <div className="h-full w-full overflow-y-scroll "> */}
-
       {loading ? (
         <>
           <Loading />

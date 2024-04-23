@@ -1,7 +1,5 @@
 import React, { useRef, useState } from "react";
-
 import emailjs from "@emailjs/browser";
-import InputBox from "../../components/user/InoutBox";
 
 export default function Contact() {
   const form = useRef();
@@ -25,20 +23,7 @@ export default function Contact() {
         form.current,
         "GIm9L2rMJrBh_7YRG"
       )
-      .then(
-        form.current.reset()
-        // toast.success(`Message Successfully sended `, {
-        //   position: "bottom-center",
-        //   duration: 2000,
-        //   style: {
-        //     border: "1px solid white",
-        //     background: "rgba(255, 255, 255, 0.08)",
-        //     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-        //     backdropFilter: "blur(10px)",
-        //     color: "black",
-        //   },
-        // })
-      );
+      .then(form.current.reset());
 
     setName("");
     setEmail("");

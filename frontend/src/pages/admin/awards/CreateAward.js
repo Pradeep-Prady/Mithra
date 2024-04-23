@@ -13,7 +13,7 @@ export default function CreateAward() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { awards, isAwardCreated } = useSelector((state) => state.awardState);
+  const { isAwardCreated } = useSelector((state) => state.awardState);
 
   const onImageChange = (e) => {
     const reader = new FileReader();

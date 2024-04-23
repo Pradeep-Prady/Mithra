@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategory, updateCategory } from "../../../actions/categoryActions";
+import { updateCategory } from "../../../actions/categoryActions";
 import { useNavigate, useParams } from "react-router-dom";
-import { clearCategoryCreated, clearCategoryUpdated } from "../../../slices/categorySclice";
+import { clearCategoryUpdated } from "../../../slices/categorySclice";
 
 export default function EditCategory() {
   const [name, setName] = useState("");
@@ -11,7 +11,7 @@ export default function EditCategory() {
   const [description, setDescription] = useState("");
   const { id } = useParams();
 
-  const { categories, isCategoryUpdated, category } = useSelector(
+  const { isCategoryUpdated, category } = useSelector(
     (state) => state.categoryState
   );
   const navigate = useNavigate();
@@ -78,17 +78,6 @@ export default function EditCategory() {
             value={name}
           />
         </div>
-
-        {/* <div className="flex flex-col ">
-          <label className="text-[17px] font-medium">Image</label>
-          <input
-            className="px-2 py-2.5 text-black my-2 outline-none "
-            type="file"
-            name="image"
-            required
-            onChange={onImageChange}
-          />
-        </div> */}
 
         <div className="flex items-start ">
           <div className="flex flex-col w-8/12 ">

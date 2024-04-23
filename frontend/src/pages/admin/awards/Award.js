@@ -8,8 +8,7 @@ import {
 } from "../../../actions/awardActions";
 
 export default function Award() {
-  // const { testimonial } = useSelector((state) => state.testimonialState);
-  const { award, isAwardCreated } = useSelector((state) => state.awardState);
+  const { award } = useSelector((state) => state.awardState);
 
   const dispatch = useDispatch();
 

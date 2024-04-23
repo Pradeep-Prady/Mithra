@@ -7,12 +7,8 @@ import TextEditor from "./../../../components/admin/TextEditor";
 
 export default function CreateProduct() {
   const [name, setName] = useState("");
-  const [images, setImages] = useState();
   const [imagesPreview, setImagesPreview] = useState("");
-  const [description, setDescription] = useState("");
   const [subCategory, setSubCategory] = useState("");
-  const [specification, setSpecification] = useState("");
-  const [additionalinfo, setAdditionalinfo] = useState("");
   const { subCategories } = useSelector((state) => state.subCategoryState);
 
   const [descriptionEditorValue, setDescriptionEditorValue] = useState("");
@@ -97,26 +93,7 @@ export default function CreateProduct() {
     reader.readAsDataURL(e.target.files[0]);
   };
 
-  const { isProductCreated, product } = useSelector(
-    (state) => state.productState
-  );
-
-  const onImagesChange = (e) => {
-    const files = Array.from(e.target.files);
-
-    files.forEach((file) => {
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setImagesPreview((oldArray) => [...oldArray, reader.result]);
-          setImages((oldArray) => [...oldArray, file]);
-        }
-      };
-
-      reader.readAsDataURL(file);
-    });
-  };
+  const { isProductCreated } = useSelector((state) => state.productState);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -191,18 +168,6 @@ export default function CreateProduct() {
               value={name}
             />
           </div>
-
-          {/* <div className="flex flex-col ">
-            <label className="text-[17px] font-medium">Images</label>
-            <input
-              className="px-2 py-2.5 text-black my-2 outline-none "
-              type="file"
-              name="images"
-              required
-              multiple
-              onChange={onImagesChange}
-            />
-          </div> */}
 
           <div className="flex items-start ">
             <div className="w-8/12">
@@ -334,18 +299,6 @@ export default function CreateProduct() {
 
           <div className="flex flex-col ">
             <label className="text-[17px] my-3 font-medium">Description</label>
-            {/* <textarea
-              className="px-2 py-2.5 text-black bg-mywhite my-2 outline-none "
-              type="text"
-              name="description"
-              rows="5"
-              placeholder="Description"
-              defaultValue={""}
-              required
-              onChange={(e) => setDescription(e.target.value)}
-              value={description}
-              style={{ resize: "none" }}
-            ></textarea> */}
 
             <TextEditor onEditorChange={setDescriptionEditorValue} />
           </div>
@@ -354,18 +307,6 @@ export default function CreateProduct() {
             <label className="text-[17px] my-3 font-medium">
               Specification
             </label>
-            {/* <textarea
-              className="px-2 py-2.5 text-black bg-mywhite my-2 outline-none "
-              type="text"
-              name="specification"
-              rows="5"
-              placeholder="specification"
-              defaultValue={""}
-              required
-              onChange={(e) => setSpecification(e.target.value)}
-              value={specification}
-              style={{ resize: "none" }}
-            ></textarea> */}
 
             <TextEditor onEditorChange={setSpecificationEditorValue} />
           </div>
@@ -374,18 +315,7 @@ export default function CreateProduct() {
             <label className="text-[17px] my-3 font-medium">
               Additional Information
             </label>
-            {/* <textarea
-              className="px-2 py-2.5 text-black bg-mywhite my-2 outline-none "
-              type="text"
-              name="additionalinfo"
-              rows="5"
-              placeholder="additionalinfo"
-              defaultValue={""}
-              required
-              onChange={(e) => setAdditionalinfo(e.target.value)}
-              value={additionalinfo}
-              style={{ resize: "none" }}
-            ></textarea> */}
+
             <TextEditor onEditorChange={setAdditionalinfoEditorValue} />
           </div>
           <div className="flex flex-col my-5 ">

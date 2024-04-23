@@ -6,11 +6,10 @@ import {
   getCategory,
 } from "../../../actions/categoryActions";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import SubCategory from "../subCategories/SubCategory";
 import SubCategories from "../subCategories/SubCategories";
 
 export default function Category() {
-  const { categories, category } = useSelector((state) => state.categoryState);
+  const { category } = useSelector((state) => state.categoryState);
 
   const dispatch = useDispatch();
 
@@ -20,8 +19,8 @@ export default function Category() {
   useEffect(() => {
     dispatch(getCategory(id));
 
-    return
-  }, [dispatch,id]);
+    return;
+  }, [dispatch, id]);
 
   const deleteHandler = () => {
     if (window.confirm("Are you sure?")) {
