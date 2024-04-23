@@ -32,7 +32,6 @@ export default function SubCategories({ id }) {
                   key={item._id}
                 >
                   <p className=" text-[20px] ">{item.name} </p>
-                  <p className="">20 Items</p>
                   <Link
                     to={`/admin/categories/${item._id}/sub`}
                     className="mt-3 hover:underline"
