@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primarycolor: rgba(224, 33, 138, 1);
+  --secondary: #03017d;
+}
+
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  margin: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+.bgprimarycolor {
+  background-color: var(--primarycolor);
+}
+.colorprimary {
+  color: var(--primarycolor);
+}
+.colorsecondary {
+  color: var(--secondary) !important;
+}
+.heading-size {
+  font-size: 26px;
+  font-weight: bold;
+}
+.home-category-image-container {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.home-category-image-container-heading {
+  background-color: white;
+  padding: 10px 50px 10px 50px;
+}
+
+.carpenter {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.contactrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nameandnumberinput {
+  padding: 5px;
+  width: 200px;
+  height: 30px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  outline: none;
+}
+.messageinput {
+  width: 100%;
+  height: 70px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  outline: none;
+  padding: 8px 8px;
+}
+
+.personimmage {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  background-color: red;
+  border: 5px solid white;
+  background-size: cover;
+  background-position: center;
+}
+
+/* promise section */
+.promise-logo {
+  width: 40px;
+  height: 50px;
+}
+.promise-logo2 {
+  width: 57px;
+  height: 50px;
+}
+/* promise section */
+
+/* testimonial card */
+
+.card {
+  border: 1px solid black;
+}
+
+.user-content p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.ratings i {
+  color: var(--primarycolor);
+}
+
+.testimonial-profile {
+  width: 80px;
+  height: 80px;
+  border-radius: 45px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* testimonial card */
+
+/* contact form start */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 10px;
+  padding-inline: 2em;
+  padding-bottom: 0.4em;
+
+  background-color: rgba(255, 192, 203, 0.39);
+  border-radius: 20px;
+}
+
+.form-heading {
+  text-align: center;
+  margin: 2em;
+  color: black;
+  font-size: 1.2em;
+  background-color: transparent;
+  align-self: center;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 10px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: black;
+  background-color: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: black;
+  padding-inline: 1em;
+}
+
+.sendMessage-btn {
+  cursor: pointer;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--primarycolor);
+  color: white;
+  font-weight: bold;
+  outline: 1px solid var(--primarycolor);
+  transition: all ease-in-out 0.3s;
+}
+
+.sendMessage-btn:hover {
+  transition: all ease-in-out 0.3s;
+  background-color: var(--primarycolor);
+  color: #000;
+  cursor: pointer;
+  box-shadow: inset 2px 5px 10px var(--primarycolor);
+}
+
+.form-card1 {
+  background-image: linear-gradient(
+    163deg,
+    var(--primarycolor) 0%,
+    var(--primarycolor) 100%
+  );
+  border-radius: 22px;
+  transition: all 0.3s;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+}
+
+.form-card2 {
+  border-radius: 0;
+  transition: all 0.2s;
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+/* contact form ends */
+
+.contactfontsize {
+  font-size: 14px;
+}
+.nameandnumber {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-category-image-container-heading {
+  border: none;
+  margin-bottom: 2px;
+  transition: 300ms;
+  background-color: #ffc0cb;
+}
+.home-category-image-container-heading:hover {
+  background-color: var(--primarycolor);
+  color: white;
+  scale: 1.1;
+}
+
+.specificationtitle :hover {
+  cursor: crosshair;
+}
+.showinmobileview {
+  display: none !important;
+}
+
+/* award card start*/
+.awardcard {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.awardcard svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.awardcard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.awardcard:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.awardcard:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* award card ends */
+
+.fontsize24 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.addresalignment {
+  margin-left: -6px;
+}
+
+@media only screen and (min-width: 670px) {
+}
+
+@media only screen and (max-width: 670px) {
+  .hidersinmobileview {
+    display: none;
+  }
+  .showinmobileview {
+    display: block !important;
+  }
+  .navbarstyles {
+    position: fixed;
+    top: 0;
+    background-color: var(--primarycolor);
+    z-index: 10;
+  }
+  .mobileviewnavbartextcolour {
+    color: white;
+  }
+  .companyname {
+    font-size: 20px;
+  }
+  .companyslogan {
+    font-size: 13px;
+    margin-left: 30px;
+  }
+  .nameandnumber {
+    flex-direction: column;
+  }
+  .nameandnumberinput {
+    width: 250px;
+  }
+  .namediv,
+  .Mobilediv {
+    margin-top: 20px;
+  }
+
+  .mycarousel {
+    height: 30vh;
+  }
+}
+
+
+/*  Scroll */
+.scroll::-webkit-scrollbar {
+  display: none;  
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: transparent;  
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: transparent;  
+}
+
+ 
+.scroll.dark {
+  scrollbar-color: transparent transparent;  
+}
