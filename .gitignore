@@ -1,7 +1,5 @@
 /node_modules
 
 /build
-
-/frontend/build
-
+ 
 /frontend/node_modules

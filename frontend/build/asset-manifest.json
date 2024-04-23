@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1db2b9a8.css",
+    "main.js": "/static/js/main.9cd2258f.js",
+    "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
+    "static/media/Banner03.png": "/static/media/Banner03.8106a39700a8bc72ebda.png",
+    "static/media/aboutusimage.png": "/static/media/aboutusimage.115d8ec82155d7b7f7ce.png",
+    "static/media/Banner02.png": "/static/media/Banner02.74a73e3c0cb34d1efb10.png",
+    "static/media/Banner01.png": "/static/media/Banner01.0f23f0090fd0c0ccee0f.png",
+    "static/media/map.webp": "/static/media/map.fd91cbf755e2f834de3c.webp",
+    "static/media/mithralogo.png": "/static/media/mithralogo.da860c9ba7231a0e1785.png",
+    "static/media/allergen.png": "/static/media/allergen.1084c11de6fb04b8ae61.png",
+    "static/media/cotton.png": "/static/media/cotton.0bb983e8e11886d5561a.png",
+    "static/media/biological.png": "/static/media/biological.73f954f9378efa956e3a.png",
+    "static/media/recycle.png": "/static/media/recycle.5a38dddf305619c0a098.png",
+    "static/media/regulateheats.png": "/static/media/regulateheats.53d297e7e62f688a5e86.png",
+    "index.html": "/index.html",
+    "main.1db2b9a8.css.map": "/static/css/main.1db2b9a8.css.map",
+    "main.9cd2258f.js.map": "/static/js/main.9cd2258f.js.map",
+    "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1db2b9a8.css",
+    "static/js/main.9cd2258f.js"
+  ]
+}
