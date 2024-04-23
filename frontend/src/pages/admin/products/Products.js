@@ -15,7 +15,6 @@ export default function Products({ id }) {
   return (
     <>
       <h2 className="text-[22px] font-semibold">Products</h2>
-
       {loading ? (
         <>
           <Loading />
@@ -30,7 +29,6 @@ export default function Products({ id }) {
                   key={item._id}
                 >
                   <p className=" text-[20px] ">{item.name} </p>
-                  <p className="">20 Items</p>
                   <Link
                     to={`/admin/product/${item._id}`}
                     className="mt-3 hover:underline"
