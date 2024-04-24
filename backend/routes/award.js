@@ -11,17 +11,21 @@ const {
 } = require("../controller/awardsController");
 const { isAuthenticatedUser } = require("../middlewares/authenticate");
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "..", "uploads/awards"));
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
-});
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname, "..", "uploads/awards"));
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname);
+//     },
+//   }),
+// });
 
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+});
 router.route("/admin/awards").get(getAwards);
 router.route("/admin/award/:id").get(getSingleAward);
 

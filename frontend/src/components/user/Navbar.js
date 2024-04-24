@@ -8,6 +8,7 @@ import { getAllCategoryForNav } from "../../actions/categoryActions";
 import DropDownSm from "./DropDownSm";
 
 export default function Navbar() {
+  
   const navLinks = [
     {
       nav: "Home",
@@ -54,6 +55,7 @@ export default function Navbar() {
       link: "/awards",
     },
   ];
+
   const [open, setOpen] = useState(false);
   const { categoriesForNav } = useSelector((state) => state.categoryState);
 

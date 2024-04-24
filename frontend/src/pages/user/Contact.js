@@ -81,7 +81,7 @@ export default function Contact() {
             <div>
               <p className="my-5 text-2xl">Get In Touch</p>
             </div>
-            <div className="w-4/6 my-3">
+            <div className="w-5/6 sm:w-4/6 my-3">
               <div className="relative w-full my-3 rounded-sm">
                 <input
                   type="text"
@@ -93,7 +93,6 @@ export default function Contact() {
                   onBlur={() => setNameFocused(false)}
                   className="w-full outline-none rounded-md"
                   style={{
-                    border: "1px solid #ccc",
                     padding: "18px 10px",
                     marginTop: "12px",
                   }}
@@ -124,7 +123,6 @@ export default function Contact() {
                   onBlur={() => setPhoneFocused(false)}
                   className="w-full outline-none rounded-md"
                   style={{
-                    border: "1px solid #ccc",
                     padding: "18px 10px",
                     marginTop: "12px",
                   }}
@@ -155,7 +153,6 @@ export default function Contact() {
                   onBlur={() => setEmailFocused(false)}
                   className="w-full outline-none rounded-md"
                   style={{
-                    border: "1px solid #ccc",
                     padding: "18px 10px",
                     marginTop: "12px",
                   }}
@@ -188,7 +185,6 @@ export default function Contact() {
                   htmlFor="text"
                   rows={4}
                   style={{
-                    border: "1px solid #ccc",
                     padding: "18px 10px",
                     marginTop: "12px",
                     resize: "none",
@@ -258,7 +254,7 @@ export default function Contact() {
             <div className="w-full flex items-center justify-center my-5">
               <button
                 type="submit"
-                className="bg-myrose text-white font-semibold w-4/6 text-center py-3 rounded-lg"
+                className="bg-myrose text-white font-semibold w-5/6 sm:w-4/6 text-center py-3 rounded-lg"
               >
                 Send Message
               </button>

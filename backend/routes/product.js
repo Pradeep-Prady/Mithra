@@ -11,15 +11,19 @@ const {
 } = require("../controller/productController");
 const { isAuthenticatedUser } = require("../middlewares/authenticate");
 
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname, "..", "uploads/product"));
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname);
+//     },
+//   }),
+// });
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "..", "uploads/product"));
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
+  storage: multer.memoryStorage(),
 });
 
 router.route("/admin/:subCategoryId/products").get(getProducts);

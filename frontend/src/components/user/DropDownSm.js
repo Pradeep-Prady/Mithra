@@ -12,7 +12,7 @@ export default function DropDownSm({ category, handleClose, color }) {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button
-            className={`inline-flex w-full my-2 justify-center gap-x-1.5 rounded-md  hover:font-medium  text-${color}  `}
+            className={`inline-flex w-full my-2 gap-x-1.5 rounded-md  hover:font-medium  text-${color}  `}
           >
             {category?.category}
             {/* <span className="material-symbols-outlined">expand_more</span> */}
@@ -28,7 +28,7 @@ export default function DropDownSm({ category, handleClose, color }) {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute left-24 top-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-[#ffc0cbdc]  focus:outline-none">
+            <Menu.Items className="  top-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-[#ffc0cbdc   focus:outline-none">
               <div className="py-1">
                 {category?.subCategories &&
                   category?.subCategories?.length > 0 &&
@@ -39,7 +39,7 @@ export default function DropDownSm({ category, handleClose, color }) {
                           to={`/products/${item._id}`}
                           onClick={handleClose}
                           className={classNames(
-                            active ? "text-black font-medium " : "text-black",
+                            active ? "text-black font-medium " : "text-white",
                             "block px-4 py-2 text-[15px] "
                           )}
                         >

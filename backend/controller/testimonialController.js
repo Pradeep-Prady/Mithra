@@ -21,7 +21,20 @@ exports.createTestimonial = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/testimonial/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/testimonial/${req.file.originalname}`;
+      const storageRef = ref(storage, `testimonial/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
     }
 
     req.body.image = image;
@@ -81,7 +94,21 @@ exports.updateTestimonial = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/testimonial/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/testimonial/${req.file.originalname}`;
+
+      const storageRef = ref(storage, `testimonial/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
       categoryData = { ...categoryData, image };
     }
 

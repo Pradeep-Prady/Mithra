@@ -12,7 +12,7 @@ export default function About() {
           <div className="colorprimary text-center mb-4 heading-size">
             About Mithra Beds and Sofas
           </div>
-          <p className="colorsecondary text-justify leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondary  my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             Mithra Enterprises, the best mattress manufacturer in Coimbatore,
             was established in February 2018 with a dream of providing natural,
             organic , quality, honest sleep solutions. As a top mattress shop in
@@ -22,7 +22,7 @@ export default function About() {
             consumers seeking sustainable bedding products aligned with their
             values.
           </p>
-          <p className="colorsecondary text-justify  leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondary  my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             Our commitment to quality is evident in the careful attention to
             detail and skilled craftsmanship that goes into each mattress we
             construct. Every product, whether a latex mattress, Kapok/ ilavam
@@ -33,14 +33,14 @@ export default function About() {
             manufacturer in Coimbatore, we ensure optimal spinal alignment and
             pressure relief in our all mattresses designs.
           </p>
-          <p className="colorsecondary text-justify  leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondary my-3  leading-8 sm:leading-10 sm:text-[18px] ">
             Customer satisfaction is paramount at Mithra Enterprises. We
             understand that choosing a best mattress is an important investment
             decision, so we aim to provide excellent customer service to assist
             you in selecting the perfect mattress tailored to your age, weight,
             health condition, sleeping position, and preferences.
           </p>
-          <p className="colorsecondary text-justify leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondary my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             We offer a wide range of mattress options including our signature
             Illavam Panju/ Kapok mattress to accommodate different sleeping
             styles, whether you prefer a firmer or plushier feel. Our focus on
@@ -48,7 +48,7 @@ export default function About() {
             modern craftsmanship allows us to deliver a superior sleep
             experience as one of the top mattress brands in Coimbatore.
           </p>
-          <p className="colorsecondary text-justify leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondary my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             What sets us apart is our commitment to using 100% organic cotton
             sourced directly from farmers who receive fair prices for their
             yields, allowing them to avoid pesticides, GMOs, and associated
@@ -56,7 +56,7 @@ export default function About() {
             bedding industry through ethical sourcing, eco-friendly practices,
             and transparent processes.
           </p>
-          <p className="colorsecondary text-justify leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondary my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             If you're going to spend a one third of your lifetime in bed, you
             deserve to know exactly what your mattress is made of. Trust Mithra
             Enterprises, the leading mattress company in Coimbatore, to provide

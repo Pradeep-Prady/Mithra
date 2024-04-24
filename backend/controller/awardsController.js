@@ -16,10 +16,26 @@ exports.createAward = catchAsyncError(async (req, res, next) => {
 
     if (process.env.NODE_ENV === "production") {
       BASE_URL = `${req.protocol}://${req.get("host")}`;
+
+      
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/awards/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/awards/${req.file.originalname}`;
+
+      const storageRef = ref(storage, `awards/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
     }
 
     req.body.image = image;
@@ -78,7 +94,21 @@ exports.updateAward = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/awards/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/awards/${req.file.originalname}`;
+
+      const storageRef = ref(storage, `awards/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
       categoryData = { ...categoryData, image };
     }
 

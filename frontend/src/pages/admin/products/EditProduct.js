@@ -36,7 +36,7 @@ export default function EditProduct() {
 
   const { id } = useParams();
 
-  const { isProductUpdated, product } = useSelector(
+  const { isProductUpdated, product, loading } = useSelector(
     (state) => state.productState
   );
 
@@ -458,6 +458,7 @@ export default function EditProduct() {
           </div>
           <div className="flex flex-col ">
             <input
+              disabled={loading}
               className="px-2 py-2.5 bg-black font-semibold cursor-pointer text-white my-2 outline-none "
               type="submit"
             />

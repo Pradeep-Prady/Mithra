@@ -11,15 +11,20 @@ const {
 } = require("../controller/subCategoryController");
 const { isAuthenticatedUser } = require("../middlewares/authenticate");
 
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname, "..", "uploads/subCategory"));
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname);
+//     },
+//   }),
+// });
+
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "..", "uploads/subCategory"));
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
+  storage: multer.memoryStorage(),
 });
 
 router.route("/admin/:categoryId/subcategories").get(getSubCategories);

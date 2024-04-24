@@ -11,6 +11,7 @@ import CottonImg from "../../../assets/cotton.png";
 import RecycleImg from "../../../assets/recycle.png";
 
 export default function Categories() {
+  
   const { categories } = useSelector((state) => state.categoryState);
 
   const dispatch = useDispatch();
@@ -62,6 +63,7 @@ export default function Categories() {
       des2: "polyester",
     },
   ];
+
   return (
     <div className="w-full  ">
       <div className="px-5 sm:px-10 md:px-20">

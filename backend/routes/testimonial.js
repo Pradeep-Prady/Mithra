@@ -11,15 +11,19 @@ const {
 } = require("../controller/testimonialController");
 const { isAuthenticatedUser } = require("../middlewares/authenticate");
 
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname, "..", "uploads/testimonial"));
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname);
+//     },
+//   }),
+// });
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "..", "uploads/testimonial"));
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
+  storage: multer.memoryStorage(),
 });
 
 router.route("/admin/testimonials").get(getTestimonials);

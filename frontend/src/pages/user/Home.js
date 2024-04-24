@@ -3,7 +3,10 @@ import Categories from "./Categories/Categories";
 import Slides from "../../components/user/Slides";
 
 import qualityImg from "../../assets/robbionimage.png";
-import hyqiene from "../../assets/messagepng.png";
+import hyqiene from "../../assets/Hygiene.jpg";
+import trust from "../../assets/trust.jpg";
+import support from "../../assets/messagepng.png";
+
 import Testimonial from "../../components/user/cards/Testimonial";
 import Contact from "./Contact";
 import Map from "../../components/user/Map";
@@ -16,7 +19,7 @@ export default function Home() {
     },
     {
       name: "Earned Trust",
-      img: qualityImg,
+      img: trust,
     },
     {
       name: "Hygiene",
@@ -24,7 +27,7 @@ export default function Home() {
     },
     {
       name: "Support on Call",
-      img: hyqiene,
+      img: support,
     },
   ];
   return (

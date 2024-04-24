@@ -10,6 +10,13 @@ const ErrorHandler = require("../utils/errorHandler");
 const SubCategory = require("../models/subCategoryModel");
 const Product = require("../models/productModel");
 const { getSubCategoriesService } = require("../services/subCategoryServices");
+const { UploadImage } = require("../utils/CloudinaryUpload");
+const { UploadImageFireBase, storage } = require("../utils/firebaseConfig");
+const {
+  uploadBytesResumable,
+  getDownloadURL,
+  ref,
+} = require("firebase/storage");
 
 exports.createCategoty = catchAsyncError(async (req, res, next) => {
   try {
@@ -22,11 +29,33 @@ exports.createCategoty = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
+      // image =await UploadImageFireBase(req, res);
+
+      const storageRef = ref(storage, `category/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
     }
+
+    // UploadImage(req.file)
+
+    // const imageUrl = UploadImageFireBase(req, res)
+
+    // console.log("imageUrl", image);
 
     req.body.image = image;
 
+    // console.log(req.body)
     const category = await add(req.body);
 
     res.status(201).json({
@@ -81,7 +110,23 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
+      
+      // image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
+
+      const storageRef = ref(storage, `category/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
+
       categoryData = { ...categoryData, image };
     }
 
@@ -125,7 +170,6 @@ exports.deleteCategory = catchAsyncError(async (req, res, next) => {
   }
 });
 
-
 // exports.getCategories = catchAsyncError(async (req, res, next) => {
 //   try {
 //     const categories = await getCategoriesService();
@@ -134,8 +178,6 @@ exports.deleteCategory = catchAsyncError(async (req, res, next) => {
 
 //     const category = await Category.findById({ _id: categoryId });
 //     const subCategories = await getSubCategoriesService(categoryId);
-
-
 
 //     return res.status(200).json({
 //       success: true,
@@ -147,7 +189,6 @@ exports.deleteCategory = catchAsyncError(async (req, res, next) => {
 //   }
 // });
 
-
 exports.getCategoriesForNav = catchAsyncError(async (req, res, next) => {
   try {
     // Fetch all categories and populate their subcategories
@@ -158,12 +199,14 @@ exports.getCategoriesForNav = catchAsyncError(async (req, res, next) => {
 
     for (const category of categories) {
       // Find subcategories for the current category
-      const categorySubCategories = subCategories.filter(sub => sub.category.toString() === category._id.toString());
-      
+      const categorySubCategories = subCategories.filter(
+        (sub) => sub.category.toString() === category._id.toString()
+      );
+
       // Push category data along with its subcategories to the data array
-      data.push({ 
+      data.push({
         category: category.name,
-        subCategories: categorySubCategories
+        subCategories: categorySubCategories,
       });
     }
 

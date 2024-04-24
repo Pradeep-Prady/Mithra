@@ -9,6 +9,12 @@ const {
 } = require("../services/subCategoryServices");
 const Category = require("../models/categoryModel");
 const ErrorHandler = require("../utils/errorHandler");
+const {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} = require("firebase/storage");
+const { storage } = require("../utils/firebaseConfig");
 
 exports.createSubCategoty = catchAsyncError(async (req, res, next) => {
   try {
@@ -21,7 +27,21 @@ exports.createSubCategoty = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/subCategory/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/subCategory/${req.file.originalname}`;
+
+      const storageRef = ref(storage, `subCategory/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
     }
 
     req.body.image = image;
@@ -93,7 +113,21 @@ exports.updateSubCategory = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      image = `${BASE_URL}/uploads/subCategory/${req.file.originalname}`;
+      // image = `${BASE_URL}/uploads/subCategory/${req.file.originalname}`;
+
+      const storageRef = ref(storage, `subCategory/${req.file.originalname}`);
+
+      const metadata = {
+        contentType: req.file.mimetype,
+      };
+
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
+
+      image = await getDownloadURL(snapshot.ref);
       subCategoryData = { ...subCategoryData, image };
     }
 

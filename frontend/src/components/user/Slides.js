@@ -22,7 +22,7 @@ export default function Slides() {
           delay: 5000,
           // disableOnInteraction: false,
         }}
-        navigation={true}
+        // navigation={true}
         pagination={{ clickable: true }}
         loop={true}
         modules={[Autoplay, Pagination, Navigation]}

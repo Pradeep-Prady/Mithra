@@ -93,7 +93,9 @@ export default function CreateProduct() {
     reader.readAsDataURL(e.target.files[0]);
   };
 
-  const { isProductCreated } = useSelector((state) => state.productState);
+  const { isProductCreated, loading } = useSelector(
+    (state) => state.productState
+  );
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -320,6 +322,7 @@ export default function CreateProduct() {
           </div>
           <div className="flex flex-col my-5 ">
             <input
+              disabled={loading}
               className="px-2 py-2.5 bg-black font-semibold cursor-pointer text-white my-2 outline-none "
               type="submit"
             />

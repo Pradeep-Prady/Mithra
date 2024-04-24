@@ -1,8 +1,8 @@
-
 const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 const path = require("path");
+const storage = require("../utils/firebaseConfig");
 const {
   createCategoty,
   getCategories,
@@ -13,15 +13,19 @@ const {
 } = require("../controller/categoryController");
 const { isAuthenticatedUser } = require("../middlewares/authenticate");
 
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname, "..", "uploads/category"));
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname);
+//     },
+//   }),
+// });
+
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "..", "uploads/category"));
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname);
-    },
-  }),
+  storage: multer.memoryStorage(),
 });
 
 router.route("/admin/categories").get(getCategories);

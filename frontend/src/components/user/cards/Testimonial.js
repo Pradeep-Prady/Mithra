@@ -19,7 +19,7 @@ export default function Testimonial() {
       </h2>
       <div className=" w-full scroll overflow-x-scroll h-full flex  px-5 sm:px-10 md:px-32   grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
         {testimonials?.map((testimonial) => (
-          <div className="card w-[300px] flex-shrink-0 p-3 text-center px-4 rounded-xl">
+          <div className="card w-[350px] flex-shrink-0 p-3 text-center px-4 rounded-xl">
             <div className="w-full flex items-center justify-center">
               <div className="h-[100px] w-[100px] rounded-full overflow-hidden flex justify-center my-5 items-center">
                 <img
