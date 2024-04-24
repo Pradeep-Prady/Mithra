@@ -1,3 +1,4 @@
+const { ref, uploadBytesResumable, getDownloadURL } = require("firebase/storage");
 const catchAsyncError = require("../middlewares/catchAsyncError");
 
 const {
@@ -9,6 +10,7 @@ const {
 } = require("../services/testimonialService");
 
 const ErrorHandler = require("../utils/errorHandler");
+const { storage } = require("../utils/firebaseConfig");
 
 exports.createTestimonial = catchAsyncError(async (req, res, next) => {
   try {

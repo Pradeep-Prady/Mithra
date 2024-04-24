@@ -1,3 +1,4 @@
+const { ref, uploadBytesResumable, getDownloadURL } = require("firebase/storage");
 const catchAsyncError = require("../middlewares/catchAsyncError");
 const {
   addData,
