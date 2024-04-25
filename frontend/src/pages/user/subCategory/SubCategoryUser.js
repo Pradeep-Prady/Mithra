@@ -37,7 +37,7 @@ export default function SubCategoryUser() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 my-10 sm:grid-cols-2 md:grid-cols-3 gap-16 sm:px-10">
+          <div className="grid grid-cols-1 my-10 sm:grid-cols-2 md:grid-cols-3 gap-16 px-5 sm:px-10 md:px-20">
             {subCategories &&
               subCategories?.length > 0 &&
               subCategories?.map((category) => (
