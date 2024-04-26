@@ -22,6 +22,8 @@ exports.createCategoty = catchAsyncError(async (req, res, next) => {
   try {
     let image;
 
+     
+
     let BASE_URL = process.env.BACKEND_URL;
 
     if (process.env.NODE_ENV === "production") {
@@ -56,6 +58,8 @@ exports.createCategoty = catchAsyncError(async (req, res, next) => {
     req.body.image = image;
 
     // console.log(req.body)
+
+    
     const category = await add(req.body);
 
     res.status(201).json({

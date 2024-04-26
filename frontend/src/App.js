@@ -1,6 +1,5 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
 import Dashboard from "./pages/admin/Dashboard";
 import Admin from "./pages/admin/Admin";
 import Home from "./pages/user/Home";
@@ -294,7 +293,7 @@ const routes = createBrowserRouter([
     ],
   },
 ]);
-
+ 
 function App() {
   return (
       <>

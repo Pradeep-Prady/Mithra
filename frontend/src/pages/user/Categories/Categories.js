@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategory } from "../../../actions/categoryActions";
 import CategoryCard from "../../../components/user/cards/CategoryCard";
@@ -11,16 +11,15 @@ import CottonImg from "../../../assets/cotton.png";
 import RecycleImg from "../../../assets/recycle.png";
 
 export default function Categories() {
-  
   const { categories } = useSelector((state) => state.categoryState);
 
   const dispatch = useDispatch();
-
+ 
   useEffect(() => {
-    if (categories?.length === 0) {
-      dispatch(getAllCategory());
-    }
+    dispatch(getAllCategory());
   }, [dispatch]);
+
+ 
 
   const specs = [
     {

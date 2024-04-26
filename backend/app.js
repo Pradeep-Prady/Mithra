@@ -7,8 +7,6 @@ const errorMiddleware = require("./middlewares/error");
 
 const app = express();
 
-dotenv.config({ path: path.join(__dirname, "config/config.env") });
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
