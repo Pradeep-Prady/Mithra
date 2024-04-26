@@ -39,7 +39,7 @@ export default function DropDownSm({ category, handleClose, color }) {
                           to={`/products/${item._id}`}
                           onClick={handleClose}
                           className={classNames(
-                            active ? "text-black font-medium " : "text-white",
+                            active ? "text-black font-medium " : `text-${color} `,
                             "block px-4 py-2 text-[15px] "
                           )}
                         >
