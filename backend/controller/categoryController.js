@@ -9,9 +9,6 @@ const {
 const ErrorHandler = require("../utils/errorHandler");
 const SubCategory = require("../models/subCategoryModel");
 const Product = require("../models/productModel");
-const { getSubCategoriesService } = require("../services/subCategoryServices");
-const { UploadImage } = require("../utils/CloudinaryUpload");
-const { UploadImageFireBase, storage } = require("../utils/firebaseConfig");
 const {
   uploadBytesResumable,
   getDownloadURL,
@@ -21,8 +18,6 @@ const {
 exports.createCategoty = catchAsyncError(async (req, res, next) => {
   try {
     let image;
-
-     
 
     let BASE_URL = process.env.BACKEND_URL;
 
@@ -59,7 +54,6 @@ exports.createCategoty = catchAsyncError(async (req, res, next) => {
 
     // console.log(req.body)
 
-    
     const category = await add(req.body);
 
     res.status(201).json({
@@ -114,7 +108,6 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
     }
 
     if (req.file) {
-      
       // image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
 
       const storageRef = ref(storage, `category/${req.file.originalname}`);

@@ -10,7 +10,6 @@ const {
 const Product = require("../models/productModel");
 const SubCategory = require("../models/subCategoryModel");
 const ErrorHandler = require("../utils/errorHandler");
-const { azureBlobHandler } = require("../utils/azureBlobHandler");
 const {
   ref,
   uploadBytesResumable,
@@ -70,7 +69,6 @@ const { storage } = require("../utils/firebaseConfig");
 //   }
 // });
 
-
 exports.createProduct = catchAsyncError(async (req, res, next) => {
   try {
     let images = [];
@@ -91,9 +89,13 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
         const storageRef = ref(storage, `product/${file.originalname}`);
         const metadata = { contentType: file.mimetype };
 
-        const snapshot = await uploadBytesResumable(storageRef, file.buffer, metadata);
+        const snapshot = await uploadBytesResumable(
+          storageRef,
+          file.buffer,
+          metadata
+        );
         const url = await getDownloadURL(snapshot.ref);
-        
+
         images.push({ image: url });
 
         // Log the uploaded image URL
@@ -117,7 +119,6 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler("Product not Created", 400));
   }
 });
-
 
 // exports.createProduct = catchAsyncError(async (req, res, next) => {
 //   try {
@@ -195,9 +196,13 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
         const storageRef = ref(storage, `product/${file.originalname}`);
         const metadata = { contentType: file.mimetype };
 
-        const snapshot = await uploadBytesResumable(storageRef, file.buffer, metadata);
+        const snapshot = await uploadBytesResumable(
+          storageRef,
+          file.buffer,
+          metadata
+        );
         const url = await getDownloadURL(snapshot.ref);
-        
+
         images.push({ image: url });
 
         // Log the uploaded image URL

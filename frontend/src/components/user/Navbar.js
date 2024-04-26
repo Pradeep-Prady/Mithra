@@ -8,7 +8,6 @@ import { getAllCategoryForNav } from "../../actions/categoryActions";
 import DropDownSm from "./DropDownSm";
 
 export default function Navbar() {
-  
   const navLinks = [
     {
       nav: "Home",
@@ -93,9 +92,13 @@ export default function Navbar() {
                 />
               ))}
 
-            <a href="#contact" className="ursor-pointer hover:font-medium">
+            {/* <a href="#contact" className="ursor-pointer hover:font-medium">
               Contact
-            </a>
+            </a> */}
+
+            <Link to="/contact" className="ursor-pointer hover:font-medium">
+              Contact
+            </Link>
             {navLinks2.map((item) => (
               <div>
                 <Link

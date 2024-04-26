@@ -31,6 +31,7 @@ import Awards from "./pages/admin/awards/Awards";
 import CreateAward from "./pages/admin/awards/CreateAward";
 import EditAward from "./pages/admin/awards/EditAward";
 import Award from "./pages/admin/awards/Award";
+import Contact from "./pages/user/Contact";
 
 const routes = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const routes = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
       {
         path: "awards",
@@ -293,12 +298,12 @@ const routes = createBrowserRouter([
     ],
   },
 ]);
- 
+
 function App() {
   return (
-      <>
-        <RouterProvider router={routes} />
-      </>
+    <>
+      <RouterProvider router={routes} />
+    </>
   );
 }
 
