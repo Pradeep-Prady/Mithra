@@ -50,14 +50,18 @@ export default function Home() {
             About Mithra Beds and Sofas
           </div>
           <p className="colorsecondary text-center leading-8 sm:leading-10 sm:text-[18px] ">
-            Mitha association with Furniture needs no introduction. Mithra is
-            the world’s largest manufacturer of moulded furniture & India’s
-            favourite furniture brand with 50 stores & 3,000+ distributors. Our
-            furniture has eternally been a part of Indian home’s interiors,
-            knowingly or unknowingly taking space in the form of a simple
-            plastic chair in your living room or an entire furniture set in your
-            bedrooms or offices adding both emotion and charm to your sheen
-            interiors.
+            Mithra Enterprises, established in February 2018, has swiftly risen
+            to become the best mattress manufacturer in Coimbatore, driven by
+            their dream of providing natural, organic, quality, and honest sleep
+            solutions. As the top mattress shop in the city, Mithra specializes
+            in crafting comfortable, supportive, and healthy mattresses using
+            eco-friendly materials like ilavam panju (Kapok), latex, and coir.
+            Their commitment to sustainability and environmentally-conscious
+            practices resonates with consumers seeking bedding products that
+            align with their values. Mithra's mattresses are a perfect blend of
+            comfort, support, and environmental responsibility, catering to the
+            growing demand for natural and organic sleep solutions in
+            Coimbatore.
           </p>
         </div>
       </div>
