@@ -52,7 +52,7 @@ export default function Home() {
           <p className="colorsecondary text-center leading-8 sm:leading-10 sm:text-[18px] ">
             Mithra Enterprises, established in February 2018, has swiftly risen
             to become the best mattress manufacturer in Coimbatore, driven by
-            their dream of providing natural, organic, quality, and honest sleep
+            their dream of providing natural, organic, quality, and healthy sleep
             solutions. As the top mattress shop in the city, Mithra specializes
             in crafting comfortable, supportive, and healthy mattresses using
             eco-friendly materials like ilavam panju (Kapok), latex, and coir.

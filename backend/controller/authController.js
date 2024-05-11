@@ -15,6 +15,7 @@ const ErrorHandler = require("../utils/errorHandler");
 exports.loginAdmin = catchAsyncError(async (req, res, next) => {
   const { username, password } = req.body;
 
+  console.log(username, password);
   if (!username || !password) {
     return next(
       new ErrorHandler("Please enter a valid username and password", 400)

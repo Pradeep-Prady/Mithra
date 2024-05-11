@@ -14,6 +14,7 @@ const {
   getDownloadURL,
   ref,
 } = require("firebase/storage");
+const { storage } = require("../utils/firebaseConfig");
 
 exports.createCategoty = catchAsyncError(async (req, res, next) => {
   try {
