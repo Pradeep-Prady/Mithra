@@ -62,6 +62,10 @@ exports.getSubCategories = catchAsyncError(async (req, res, next) => {
   try {
     const { categoryId } = req.params;
 
+    if (!categoryId) {
+      return next(new ErrorHandler("categoryId is required", 400));
+    }
+
     const category = await Category.findById({ _id: categoryId });
     const subCategories = await getSubCategoriesService(categoryId);
 
@@ -93,9 +97,8 @@ exports.singleSubCategoty = catchAsyncError(async (req, res, next) => {
 exports.updateSubCategory = catchAsyncError(async (req, res, next) => {
   try {
     const categoryId = req.body.category;
-    console.log(req.body.category);
-    const isValidObjectId = Types.ObjectId.isValid(categoryId);
 
+    const isValidObjectId = Types.ObjectId.isValid(categoryId);
 
     if (!isValidObjectId) {
       return next(new ErrorHandler("Invalid ObjectId for category", 400));
