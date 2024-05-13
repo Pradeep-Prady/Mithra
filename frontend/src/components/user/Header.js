@@ -15,15 +15,27 @@ export default function Header() {
           <span>
             <i className="fa-brands fa-x-twitter text-[18px] px-2"></i>
           </span>
-          <span>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.instagram.com/mithrabedsandsofas?igsh=NzloaDI0ZDYxcnJn"
+          >
             <i className="fa-brands fa-instagram text-[18px] px-2"></i>
-          </span>
-          <span>
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.facebook.com/share/j43i9XXWBvxQUVUr/?mibextid=qi2Omg"
+          >
             <i className="fa-brands fa-facebook text-[18px] px-2"></i>
-          </span>
-          <span>
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/malini-d-2671102b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          >
             <i className="fa-brands fa-linkedin text-[18px] px-2"></i>
-          </span>
+          </a>
         </div>
       </div>
 
