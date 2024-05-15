@@ -7,7 +7,7 @@ const testimonialSchema = mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    // required: true ,
   },
   review: {
     type: String,

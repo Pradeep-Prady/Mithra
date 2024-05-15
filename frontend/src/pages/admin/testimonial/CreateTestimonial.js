@@ -35,7 +35,7 @@ export default function CreateTestimonial() {
     const formData = new FormData();
 
     formData.append("name", name);
-    formData.append("image", image);
+    // formData.append("image", image);
     formData.append("review", review);
     formData.append("role", role);
 
@@ -59,7 +59,7 @@ export default function CreateTestimonial() {
           Create Testimonial
         </h2>
         <div className="flex flex-col ">
-          <label className="text-[17px] font-medium">Name</label>
+          <label className="text-[17px] font-medium">Title</label>
           <input
             className="px-2 py-2.5 bg-mywhite text-black my-2 outline-none "
             type="text"
@@ -70,7 +70,7 @@ export default function CreateTestimonial() {
           />
         </div>
 
-        <div className="flex items-start ">
+        {/* <div className="flex items-start ">
           <div className="flex flex-col w-8/12 ">
             <label className="text-[17px] font-medium">Image</label>
             <input
@@ -87,7 +87,7 @@ export default function CreateTestimonial() {
               <img className="" alt="mainImagePreview" src={imagePreview} />
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className="flex flex-col ">
           <label className="text-[17px] font-medium">Review</label>
@@ -105,7 +105,7 @@ export default function CreateTestimonial() {
         </div>
 
         <div className="flex flex-col ">
-          <label className="text-[17px] font-medium">Role</label>
+          <label className="text-[17px] font-medium">Name</label>
           <input
             className="px-2 py-2.5 bg-mywhite text-black my-2 outline-none "
             type="text"

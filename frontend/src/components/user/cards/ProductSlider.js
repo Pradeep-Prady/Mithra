@@ -9,7 +9,7 @@ export default function ProductSlider({ images }) {
   return (
     <div className="w-full h-[500px]  px-5 sm:px-10 md:px-32 overflow-hidden">
       <Swiper
-        className="h-full w-4/6"
+        className="h-full w-full sm:w-4/6"
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
