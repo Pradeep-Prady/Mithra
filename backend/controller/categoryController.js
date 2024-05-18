@@ -145,7 +145,7 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
     const categoryId = req.params.id;
     
     // Fetch the current category data
-    const existingCategory = await getCategoryById(categoryId);
+    const existingCategory = await getCategorybyId(categoryId);
     if (!existingCategory) {
       return next(new ErrorHandler(404, "Category Not Found"));
     }
