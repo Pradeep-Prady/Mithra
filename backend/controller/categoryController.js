@@ -13,6 +13,7 @@ const {
   uploadBytesResumable,
   getDownloadURL,
   ref,
+  deleteObject 
 } = require("firebase/storage");
 const { storage } = require("../utils/firebaseConfig");
 
@@ -93,8 +94,62 @@ exports.singleCategoty = catchAsyncError(async (req, res, next) => {
   }
 });
 
+// exports.updateCategory = catchAsyncError(async (req, res, next) => {
+//   try {
+//     let categoryData = {
+//       name: req.body.name,
+//       description: req.body.description,
+//     };
+
+//     let image;
+
+//     let BASE_URL = process.env.BACKEND_URL;
+
+//     if (process.env.NODE_ENV === "production") {
+//       BASE_URL = `${req.protocol}://${req.get("host")}`;
+//     }
+
+//     if (req.file) {
+//       // image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
+
+//       const storageRef = ref(storage, `category/${req.file.originalname}`);
+
+//       const metadata = {
+//         contentType: req.file.mimetype,
+//       };
+
+//       const snapshot = await uploadBytesResumable(
+//         storageRef,
+//         req.file.buffer,
+//         metadata
+//       );
+
+//       image = await getDownloadURL(snapshot.ref);
+
+//       categoryData = { ...categoryData, image };
+//     }
+
+//     const category = await update(req.params.id, categoryData);
+//     return res.status(200).json({
+//       success: true,
+//       category,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     return next(new ErrorHandler(400, "Category Not Available"));
+//   }
+// });
+
 exports.updateCategory = catchAsyncError(async (req, res, next) => {
   try {
+    const categoryId = req.params.id;
+    
+    // Fetch the current category data
+    const existingCategory = await getCategoryById(categoryId);
+    if (!existingCategory) {
+      return next(new ErrorHandler(404, "Category Not Found"));
+    }
+
     let categoryData = {
       name: req.body.name,
       description: req.body.description,
@@ -102,33 +157,29 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
 
     let image;
 
-    let BASE_URL = process.env.BACKEND_URL;
-
-    if (process.env.NODE_ENV === "production") {
-      BASE_URL = `${req.protocol}://${req.get("host")}`;
-    }
-
     if (req.file) {
-      // image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
+      // Extract file name from the existing image URL
+      const oldImageUrl = existingCategory.image;
+      if (oldImageUrl) {
+        const oldFileName = oldImageUrl.split('/').pop().split('#')[0].split('?')[0];
+        const oldImageRef = ref(storage, `category/${oldFileName}`);
 
+        // Delete the old image from Firebase Storage
+        await deleteObject(oldImageRef);
+      }
+
+      // Upload the new image
       const storageRef = ref(storage, `category/${req.file.originalname}`);
-
       const metadata = {
         contentType: req.file.mimetype,
       };
-
-      const snapshot = await uploadBytesResumable(
-        storageRef,
-        req.file.buffer,
-        metadata
-      );
-
+      const snapshot = await uploadBytesResumable(storageRef, req.file.buffer, metadata);
       image = await getDownloadURL(snapshot.ref);
 
       categoryData = { ...categoryData, image };
     }
 
-    const category = await update(req.params.id, categoryData);
+    const category = await update(categoryId, categoryData);
     return res.status(200).json({
       success: true,
       category,
@@ -167,25 +218,7 @@ exports.deleteCategory = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(400, "Category Deletion Failed"));
   }
 });
-
-// exports.getCategories = catchAsyncError(async (req, res, next) => {
-//   try {
-//     const categories = await getCategoriesService();
-
-//     const { categoryId } = req.params;
-
-//     const category = await Category.findById({ _id: categoryId });
-//     const subCategories = await getSubCategoriesService(categoryId);
-
-//     return res.status(200).json({
-//       success: true,
-//       categories,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     return next(new ErrorHandler(400, "Category Not Available"));
-//   }
-// });
+ 
 
 exports.getCategoriesForNav = catchAsyncError(async (req, res, next) => {
   try {
