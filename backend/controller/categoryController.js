@@ -89,59 +89,14 @@ exports.singleCategoty = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(400, "Category Not Available"));
   }
 });
-
-// exports.updateCategory = catchAsyncError(async (req, res, next) => {
-//   try {
-//     let categoryData = {
-//       name: req.body.name,
-//       description: req.body.description,
-//     };
-
-//     let image;
-
-//     let BASE_URL = process.env.BACKEND_URL;
-
-//     if (process.env.NODE_ENV === "production") {
-//       BASE_URL = `${req.protocol}://${req.get("host")}`;
-//     }
-
-//     if (req.file) {
-//       // image = `${BASE_URL}/uploads/category/${req.file.originalname}`;
-
-//       const storageRef = ref(storage, `category/${req.file.originalname}`);
-
-//       const metadata = {
-//         contentType: req.file.mimetype,
-//       };
-
-//       const snapshot = await uploadBytesResumable(
-//         storageRef,
-//         req.file.buffer,
-//         metadata
-//       );
-
-//       image = await getDownloadURL(snapshot.ref);
-
-//       categoryData = { ...categoryData, image };
-//     }
-
-//     const category = await update(req.params.id, categoryData);
-//     return res.status(200).json({
-//       success: true,
-//       category,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     return next(new ErrorHandler(400, "Category Not Available"));
-//   }
-// });
-
+ 
 exports.updateCategory = catchAsyncError(async (req, res, next) => {
   try {
     const categoryId = req.params.id;
     
+    console.log(categoryId)
     // Fetch the current category data
-    const existingCategory = await getCategoryById(categoryId);
+    const existingCategory = await getCategorybyId(categoryId);
     if (!existingCategory) {
       return next(new ErrorHandler(404, "Category Not Found"));
     }
