@@ -9,13 +9,9 @@ const {
 const ErrorHandler = require("../utils/errorHandler");
 const SubCategory = require("../models/subCategoryModel");
 const Product = require("../models/productModel");
-const {
-  uploadBytesResumable,
-  getDownloadURL,
-  ref,
-  deleteObject 
-} = require("firebase/storage");
+ 
 const { storage } = require("../utils/firebaseConfig");
+const { ref, uploadBytesResumable, getDownloadURL, deleteObject } = require('firebase/storage');
 
 exports.createCategoty = catchAsyncError(async (req, res, next) => {
   try {
@@ -145,7 +141,7 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
     const categoryId = req.params.id;
     
     // Fetch the current category data
-    const existingCategory = await getCategorybyId(categoryId);
+    const existingCategory = await getCategoryById(categoryId);
     if (!existingCategory) {
       return next(new ErrorHandler(404, "Category Not Found"));
     }
@@ -161,11 +157,18 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
       // Extract file name from the existing image URL
       const oldImageUrl = existingCategory.image;
       if (oldImageUrl) {
-        const oldFileName = oldImageUrl.split('/').pop().split('#')[0].split('?')[0];
+        const oldFileName = decodeURIComponent(oldImageUrl.split('/').pop().split('#')[0].split('?')[0]);
         const oldImageRef = ref(storage, `category/${oldFileName}`);
 
         // Delete the old image from Firebase Storage
-        await deleteObject(oldImageRef);
+        try {
+          await deleteObject(oldImageRef);
+        } catch (error) {
+          if (error.code !== 'storage/object-not-found') {
+            console.log("Error deleting old image: ", error);
+            return next(new ErrorHandler(500, "Error deleting old image"));
+          }
+        }
       }
 
       // Upload the new image
