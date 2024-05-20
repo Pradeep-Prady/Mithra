@@ -13,6 +13,7 @@ const {
   ref,
   uploadBytesResumable,
   getDownloadURL,
+  deleteObject,
 } = require("firebase/storage");
 const { storage } = require("../utils/firebaseConfig");
 
@@ -104,6 +105,9 @@ exports.updateSubCategory = catchAsyncError(async (req, res, next) => {
       return next(new ErrorHandler("Invalid ObjectId for category", 400));
     }
 
+    const existingSubCategory = await getSubCategorybyId(req.params.id);
+
+
     let subCategoryData = {
       name: req.body.name,
       description: req.body.description,
@@ -116,6 +120,36 @@ exports.updateSubCategory = catchAsyncError(async (req, res, next) => {
     if (process.env.NODE_ENV === "production") {
       BASE_URL = `${req.protocol}://${req.get("host")}`;
     }
+    const oldImageUrl = existingSubCategory.image;
+
+    if (oldImageUrl) {
+      const oldFileName = decodeURIComponent(
+        oldImageUrl.split("/").pop().split("#")[0].split("?")[0]
+      );
+      const oldImageRef = ref(storage, `${oldFileName}`);
+
+      // Delete the old image from Firebase Storage
+      try {
+        // console.log(`Attempting to delete old image: ${oldImageRef}`);
+        await deleteObject(oldImageRef);
+        // .then(() => {
+        //   console.log("Old image deleted successfully");
+        // })
+        // .catch((error) => {
+        //   console.log("Error deleting old image: ", error);
+        // });
+
+        // console.log("Old image deleted successfully");
+      } catch (error) {
+        if (error.code === "storage/object-not-found") {
+          console.log("Old image not found, proceeding with update");
+        } else {
+          console.log("Error deleting old image: ", error);
+          return next(new ErrorHandler(500, "Error deleting old image"));
+        }
+      }
+    }
+
 
     if (req.file) {
       // image = `${BASE_URL}/uploads/subCategory/${req.file.originalname}`;

@@ -14,6 +14,7 @@ const {
   ref,
   uploadBytesResumable,
   getDownloadURL,
+  deleteObject,
 } = require("firebase/storage");
 const { storage } = require("../utils/firebaseConfig");
 
@@ -169,72 +170,30 @@ exports.getSingleProduct = catchAsyncError(async (req, res, next) => {
   }
 });
 
-exports.updateProduct = catchAsyncError(async (req, res, next) => {
-  try {
-    let data = await Product.findById(req.params.id);
-
-    let images = [];
-
-    if (req.body.imagesCleared === "false") {
-      images = data.images;
-    }
-    // if (req.files && req.files.length > 0) {
-    //   req.files.forEach((file) => {
-    //     let url = `${process.env.BACKEND_URL}/uploads/product/${file.originalname}`;
-    //     images.push({ image: url });
-    //   });
-    // }
-
-    if (req?.files?.length > 0) {
-      for (const file of req.files) {
-        // Log the filename to ensure it's unique
-        console.log("Filename:", file.originalname);
-
-        // Log the file buffer to ensure it contains the correct image data
-        console.log("File Buffer:", file.buffer);
-
-        const storageRef = ref(storage, `product/${file.originalname}`);
-        const metadata = { contentType: file.mimetype };
-
-        const snapshot = await uploadBytesResumable(
-          storageRef,
-          file.buffer,
-          metadata
-        );
-        const url = await getDownloadURL(snapshot.ref);
-
-        images.push({ image: url });
-
-        // Log the uploaded image URL
-        console.log("Uploaded Image URL:", url);
-      }
-    }
-
-    req.body.images = images;
-
-    const product = await UpdateById(req.params.id, req.body);
-    return res.status(200).json({
-      success: true,
-      product,
-    });
-  } catch (err) {
-    console.log(err);
-    return next(new ErrorHandler("Product Not Updated", 400));
-  }
-});
-
 // exports.updateProduct = catchAsyncError(async (req, res, next) => {
 //   try {
 //     let data = await Product.findById(req.params.id);
 
 //     let images = [];
 
-//     console.log(req.body);
-
 //     if (req.body.imagesCleared === "false") {
 //       images = data.images;
-//     } else {
-//       images = await azureBlobHandler(req, "product");
+//     }
+
+//     if (req?.files?.length > 0) {
+//       for (const file of req.files) {
+//         const storageRef = ref(storage, `product/${file.originalname}`);
+//         const metadata = { contentType: file.mimetype };
+
+//         const snapshot = await uploadBytesResumable(
+//           storageRef,
+//           file.buffer,
+//           metadata
+//         );
+//         const url = await getDownloadURL(snapshot.ref);
+
+//         images.push({ image: url });
+//       }
 //     }
 
 //     req.body.images = images;
@@ -249,6 +208,78 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
 //     return next(new ErrorHandler("Product Not Updated", 400));
 //   }
 // });
+ 
+exports.updateProduct = catchAsyncError(async (req, res, next) => {
+  try {
+    const productId = req.params.id;
+
+    let data = await Product.findById(productId);
+    if (!data) {
+      return next(new ErrorHandler(404, "Product Not Found"));
+    }
+
+    let images = [];
+
+    if (req.body.imagesCleared === "false") {
+      images = data.images;
+    } else {
+      // If imagesCleared is true, delete the old images
+      for (const image of data.images) {
+        const oldImageUrl = image.image;
+        if (oldImageUrl) {
+          const oldFileName = decodeURIComponent(
+            oldImageUrl.split('/').pop().split('#')[0].split('?')[0]
+          );
+          const oldImageRef = ref(storage, ` ${oldFileName}`);
+
+
+          console.log(oldImageRef)
+          // Delete the old image from Firebase Storage
+          try {
+            await deleteObject(oldImageRef);
+            console.log(`Deleted old image: ${oldFileName}`);
+          } catch (error) {
+            if (error.code === 'storage/object-not-found') {
+              console.log("Old image not found, skipping deletion");
+            } else {
+              console.log("Error deleting old image: ", error);
+              return next(new ErrorHandler(500, "Error deleting old image"));
+            }
+          }
+        }
+      }
+    }
+
+    if (req?.files?.length > 0) {
+      for (const file of req.files) {
+        const storageRef = ref(storage, `product/${file.originalname}`);
+        const metadata = { contentType: file.mimetype };
+
+        const snapshot = await uploadBytesResumable(
+          storageRef,
+          file.buffer,
+          metadata
+        );
+        const url = await getDownloadURL(snapshot.ref);
+
+        images.push({ image: url });
+      }
+    }
+
+    req.body.images = images;
+
+    const product = await UpdateById(productId, req.body);
+    return res.status(200).json({
+      success: true,
+      product,
+    });
+  } catch (err) {
+    console.log(err);
+    return next(new ErrorHandler("Product Not Updated", 400));
+  }
+});
+
+ 
 
 exports.deleteProduct = catchAsyncError(async (req, res, next) => {
   try {

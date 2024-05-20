@@ -9,9 +9,14 @@ const {
 const ErrorHandler = require("../utils/errorHandler");
 const SubCategory = require("../models/subCategoryModel");
 const Product = require("../models/productModel");
- 
+
 const { storage } = require("../utils/firebaseConfig");
-const { ref, uploadBytesResumable, getDownloadURL, deleteObject } = require('firebase/storage');
+const {
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+  deleteObject,
+} = require("firebase/storage");
 
 exports.createCategoty = catchAsyncError(async (req, res, next) => {
   try {
@@ -89,12 +94,11 @@ exports.singleCategoty = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(400, "Category Not Available"));
   }
 });
- 
 exports.updateCategory = catchAsyncError(async (req, res, next) => {
   try {
     const categoryId = req.params.id;
-    
-    console.log(categoryId)
+
+    console.log(categoryId);
     // Fetch the current category data
     const existingCategory = await getCategorybyId(categoryId);
     if (!existingCategory) {
@@ -112,14 +116,27 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
       // Extract file name from the existing image URL
       const oldImageUrl = existingCategory.image;
       if (oldImageUrl) {
-        const oldFileName = decodeURIComponent(oldImageUrl.split('/').pop().split('#')[0].split('?')[0]);
-        const oldImageRef = ref(storage, `category/${oldFileName}`);
+        const oldFileName = decodeURIComponent(
+          oldImageUrl.split("/").pop().split("#")[0].split("?")[0]
+        );
+        const oldImageRef = ref(storage, `${oldFileName}`);
 
         // Delete the old image from Firebase Storage
         try {
+          // console.log(`Attempting to delete old image: ${oldImageRef}`);
           await deleteObject(oldImageRef);
+          // .then(() => {
+          //   console.log("Old image deleted successfully");
+          // })
+          // .catch((error) => {
+          //   console.log("Error deleting old image: ", error);
+          // });
+
+          // console.log("Old image deleted successfully");
         } catch (error) {
-          if (error.code !== 'storage/object-not-found') {
+          if (error.code === "storage/object-not-found") {
+            console.log("Old image not found, proceeding with update");
+          } else {
             console.log("Error deleting old image: ", error);
             return next(new ErrorHandler(500, "Error deleting old image"));
           }
@@ -131,7 +148,11 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
       const metadata = {
         contentType: req.file.mimetype,
       };
-      const snapshot = await uploadBytesResumable(storageRef, req.file.buffer, metadata);
+      const snapshot = await uploadBytesResumable(
+        storageRef,
+        req.file.buffer,
+        metadata
+      );
       image = await getDownloadURL(snapshot.ref);
 
       categoryData = { ...categoryData, image };
@@ -147,7 +168,6 @@ exports.updateCategory = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(400, "Category Not Available"));
   }
 });
-
 exports.deleteCategory = catchAsyncError(async (req, res, next) => {
   try {
     const categoryId = req.params.id;
@@ -176,7 +196,6 @@ exports.deleteCategory = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(400, "Category Deletion Failed"));
   }
 });
- 
 
 exports.getCategoriesForNav = catchAsyncError(async (req, res, next) => {
   try {
