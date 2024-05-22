@@ -7,9 +7,9 @@ import "swiper/css/navigation";
 
 export default function ProductSlider({ images }) {
   return (
-    <div className="w-full h-[500px]  px-5 sm:px-10 md:px-32 overflow-hidden">
+    <div className="w-full h-auto sm:h-[500px]  px-5 sm:px-10 md:px-32 overflow-hidden">
       <Swiper
-        className="h-full w-full sm:w-[60%]"
+        className="h-auto w-full sm:w-[60%]"
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{

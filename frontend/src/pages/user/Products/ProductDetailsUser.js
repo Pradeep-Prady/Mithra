@@ -36,7 +36,7 @@ export default function ProductDetailsUser() {
             </div>
 
             <div className="w-full  px-5 sm:px-10 md:px-72 ">
-              <div className="border-b-2 py-10">
+              <div className="border-b-2 py-1 sm:py-10">
                 <h3 className="colorprimary font-semibold text-[20px] my-2">
                   Description
                 </h3>
@@ -49,7 +49,7 @@ export default function ProductDetailsUser() {
                 </div>
               </div>
 
-              <div className="border-b-2 py-10">
+              <div className="border-b-2 py-3 sm:py-10">
                 <h3 className="colorprimary font-semibold text-[20px] my-2">
                   Specification
                 </h3>
@@ -59,7 +59,7 @@ export default function ProductDetailsUser() {
                 />
               </div>
 
-              <div className="border-b-2 py-10">
+              <div className="border-b-2 py-3 sm:py-10">
                 <h3 className="colorprimary font-semibold text-[20px] my-2">
                   Additional info
                 </h3>
