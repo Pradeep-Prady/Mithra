@@ -36,7 +36,7 @@ export default function ProductsUser() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 my-10 sm:grid-cols-2 md:grid-cols-3 gap-16 sm:px-10">
+            <div className="grid  grid-cols-1 my-10 sm:grid-cols-2 md:grid-cols-3 gap-16 sm:px-10">
               {products &&
                 products?.length > 0 &&
                 products?.map((category) => (

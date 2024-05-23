@@ -24,8 +24,8 @@ export default function ProductDetailsUser() {
         </>
       ) : (
         <>
-          <div>
-            <div className="w-full flex items-center justify-center">
+          <div className="bg-[#f5f5f5] py-3 sm:py-10">
+            <div className="w-full  flex items-center justify-center">
               <ProductSlider images={product?.images} />
             </div>
 

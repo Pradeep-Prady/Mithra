@@ -71,7 +71,7 @@ export default function Navbar() {
     <>
       <div className="md:block hidden">
         <Header />
-        <div className="px-20 flex items-center justify-center w-full border-b-2 shadow-md py-10 mb-10 ">
+        <div className="px-20 flex items-center justify-center w-full border-b-2 shadow-md py-10  ">
           <div className="flex flex-wrap justify-center items-center font-light gap-7">
             {navLinks.map((item) => (
               <div>
