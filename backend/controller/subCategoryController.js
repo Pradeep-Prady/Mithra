@@ -16,6 +16,7 @@ const {
   deleteObject,
 } = require("firebase/storage");
 const { storage } = require("../utils/firebaseConfig");
+const { getCategorybyId } = require("../services/categoryServices");
 
 exports.createSubCategoty = catchAsyncError(async (req, res, next) => {
   try {
@@ -67,7 +68,7 @@ exports.getSubCategories = catchAsyncError(async (req, res, next) => {
       return next(new ErrorHandler("categoryId is required", 400));
     }
 
-    const category = await Category.findById({ _id: categoryId });
+    const category = await getCategorybyId({ _id: categoryId });
     const subCategories = await getSubCategoriesService(categoryId);
 
     return res.status(200).json({
@@ -106,7 +107,6 @@ exports.updateSubCategory = catchAsyncError(async (req, res, next) => {
     }
 
     const existingSubCategory = await getSubCategorybyId(req.params.id);
-
 
     let subCategoryData = {
       name: req.body.name,
@@ -149,7 +149,6 @@ exports.updateSubCategory = catchAsyncError(async (req, res, next) => {
         }
       }
     }
-
 
     if (req.file) {
       // image = `${BASE_URL}/uploads/subCategory/${req.file.originalname}`;
