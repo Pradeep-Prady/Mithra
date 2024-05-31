@@ -70,7 +70,7 @@ exports.getSubCategories = catchAsyncError(async (req, res, next) => {
 
     const category = await getCategorybyId({ _id: categoryId });
     const subCategories = await getSubCategoriesService(categoryId);
-
+8
     return res.status(200).json({
       success: true,
       name: category?.name,

@@ -52,16 +52,40 @@ export default function Home() {
           <p className="colorsecondary text-center leading-8 sm:leading-10 sm:text-[18px] ">
             Mithra Enterprises, established in February 2018, has swiftly risen
             to become the best mattress manufacturer in Coimbatore, driven by
-            their dream of providing natural, organic, quality, and healthy sleep
-            solutions. As the top mattress shop in the city, Mithra specializes
-            in crafting comfortable, supportive, and healthy mattresses using
-            eco-friendly materials like ilavam panju (Kapok), latex, and coir.
-            Their commitment to sustainability and environmentally-conscious
-            practices resonates with consumers seeking bedding products that
-            align with their values. Mithra's mattresses are a perfect blend of
-            comfort, support, and environmental responsibility, catering to the
-            growing demand for natural and organic sleep solutions in
-            Coimbatore.
+            their dream of providing natural, organic, quality, and healthy
+            sleep solutions. As the top mattress shop in the city, Mithra
+            specializes in crafting comfortable, supportive, and healthy
+            mattresses using eco-friendly materials like ilavam panju (Kapok),
+            latex, and coir. Their commitment to sustainability and
+            environmentally-conscious practices resonates with consumers seeking
+            bedding products that align with their values. Mithra's mattresses
+            are a perfect blend of comfort, support, and environmental
+            responsibility, catering to the growing demand for natural and
+            organic sleep solutions in Coimbatore.
+          </p>
+        </div>
+      </div>
+
+      <div className="w-full px-5 sm:px-10 md:px-32 gap-5 grid grid-cols-2 py-10">
+        <div className="glass p-5">
+          <h2 className="colorprimary  text-center mb-4 heading-size">Mission Statement</h2>
+          <p className="colorsecondary  text-center leading-8 text-[18px]">
+            {" "}
+            Mithra enterprises is set to provide the natural, organic,
+            comfortable, durable, eco-friendly, hypo allergenic, luxurious with
+            highest quality mattresses to all which promotes healthy sleep with
+            environmental responsibility.
+          </p>
+        </div>
+        <div className="glass p-5">
+
+          <h2 className="colorprimary  text-center mb-4 heading-size">Vision Statement</h2>
+          <p className="colorsecondary  text-center leading-8 text-[18px]">
+
+            {" "}
+            Mithra Enterprises should be a leading company in the natural,
+            organic mattresses industry, recognized for innovation,
+            eco-conscious practices and exceptional craftmanship
           </p>
         </div>
       </div>
