@@ -14,12 +14,10 @@ export default function Categories() {
   const { categories } = useSelector((state) => state.categoryState);
 
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     dispatch(getAllCategory());
   }, [dispatch]);
-
- 
 
   const specs = [
     {
@@ -93,7 +91,9 @@ export default function Categories() {
         <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {specs?.map((spec) => (
             <div className="col-md-4 text-center my-7 flex flex-col items-center justify-center">
-              <img src={spec?.img} width="100px" alt="" />
+              <div className="w-[130px] bg-[#ffc0cb67] p-5 rounded-full">
+                <img src={spec?.img} width="100px" alt="" />
+              </div>
               <h5 className="colorprimary font-bold text-[20px] mt-3">
                 {spec?.name}
               </h5>
