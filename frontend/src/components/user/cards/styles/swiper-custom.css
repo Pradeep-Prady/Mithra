@@ -43,9 +43,41 @@
   color: #ffffff !important; /* Replace with your 'myrose' color */
 }
 
+
+/* swiper-custom.css */
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #E91E63 !important; /* Replace with your 'myrose' color */
+  opacity: 1 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color as needed */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 12px; /* Adjust the font size as needed */
+  color: #E91E63 !important; /* Replace with your 'myrose' color */
+}
+
+
 @media screen and (max-width: 768px) {
   .swiper-button-prev::after,
   .swiper-button-next::after {
     font-size: 12px; /* Adjust the font size as needed */
   }
 }
+
+
