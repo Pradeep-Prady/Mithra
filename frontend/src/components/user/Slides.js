@@ -54,11 +54,11 @@ const MySwiperComponent = ({ images }) => {
       </Swiper>
       <div
         ref={prevRef}
-        className="swiper-button-prev bg-gray-100 p-2 sm:p-4 md:p-7 text-[12px] rounded-full !text-myrose w-[10px] h-[1px] absolute left-0 z-10"
+        className="swiper-button-prev bg-gray-100 p-3 sm:p-4 md:p-7 text-[12px] rounded-full !text-myrose w-[10px] h-[1px] absolute left-0 z-10"
       ></div>
       <div
         ref={nextRef}
-        className="swiper-button-next p-2 sm:p-4 md:p-7 !text-myrose absolute right-0 z-10"
+        className="swiper-button-next p-3 sm:p-4 md:p-7 !text-myrose absolute right-0 z-10"
       ></div>
     </div>
   );

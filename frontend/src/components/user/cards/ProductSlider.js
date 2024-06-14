@@ -37,8 +37,8 @@ export default function ProductSlider({ images }) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-button-prev p-2 sm:p-4 md:p-5 absolute z-10"></div>
-        <div className="swiper-button-next p-2 sm:p-4 md:p-5 absolute right-0 z-10"></div>
+        <div className="swiper-button-prev p-3 sm:p-4 md:p-5 absolute z-10"></div>
+        <div className="swiper-button-next p-3 sm:p-4 md:p-5 absolute right-0 z-10"></div>
       </div>
     </div>
   );
