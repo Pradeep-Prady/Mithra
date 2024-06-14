@@ -66,10 +66,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full px-5 sm:px-10 md:px-32 gap-5 grid grid-cols-2 py-10">
+      <div className="w-full px-5 sm:px-10 md:px-32 gap-5 md:grid grid-cols-2 py-10">
         <div className="glass p-5">
           <h2 className="colorprimary  text-center mb-4 heading-size">Mission Statement</h2>
-          <p className="colorsecondary  text-center leading-8 text-[18px]">
+          <p className="colorsecondary  text-center sm:leading-8 md:text-[18px]">
             {" "}
             Mithra enterprises is set to provide the natural, organic,
             comfortable, durable, eco-friendly, hypo allergenic, luxurious with
@@ -80,7 +80,8 @@ export default function Home() {
         <div className="glass p-5">
 
           <h2 className="colorprimary  text-center mb-4 heading-size">Vision Statement</h2>
-          <p className="colorsecondary  text-center leading-8 text-[18px]">
+          <p className="colorsecondary  text-center sm:leading-8 md:text-[18px]">
+
 
             {" "}
             Mithra Enterprises should be a leading company in the natural,

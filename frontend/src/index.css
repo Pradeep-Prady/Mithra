@@ -398,3 +398,15 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+
+/* swiper-custom.css */
+.swiper-pagination-bullet {
+  background-color: rgb(255, 0, 170); /* Default bullet color */
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #E91E63; /* Replace with your 'myrose' color */
+  opacity: 1;
+}
