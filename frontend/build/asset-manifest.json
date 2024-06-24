@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.17239978.css",
-    "main.js": "/static/js/main.988e1dbc.js",
+    "main.js": "/static/js/main.c2f9cb5c.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/ceo.jpg": "/static/media/ceo.179becd7f097f2b79678.jpg",
+    "static/media/Banner02.png": "/static/media/Banner02.2f447c4027ea322a867c.png",
     "static/media/Banner03.png": "/static/media/Banner03.8106a39700a8bc72ebda.png",
     "static/media/aboutusimage.png": "/static/media/aboutusimage.115d8ec82155d7b7f7ce.png",
-    "static/media/Banner02.png": "/static/media/Banner02.74a73e3c0cb34d1efb10.png",
-    "static/media/Banner01.png": "/static/media/Banner01.0f23f0090fd0c0ccee0f.png",
+    "static/media/Banner01.png": "/static/media/Banner01.324f45ce90083b3e704c.png",
     "static/media/trust.jpg": "/static/media/trust.061dc130fa11bfe21617.jpg",
     "static/media/mithralogo.png": "/static/media/mithralogo.da860c9ba7231a0e1785.png",
     "static/media/allergen.png": "/static/media/allergen.1084c11de6fb04b8ae61.png",
@@ -18,11 +18,11 @@
     "static/media/regulateheats.png": "/static/media/regulateheats.53d297e7e62f688a5e86.png",
     "index.html": "/index.html",
     "main.17239978.css.map": "/static/css/main.17239978.css.map",
-    "main.988e1dbc.js.map": "/static/js/main.988e1dbc.js.map",
+    "main.c2f9cb5c.js.map": "/static/js/main.c2f9cb5c.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17239978.css",
-    "static/js/main.988e1dbc.js"
+    "static/js/main.c2f9cb5c.js"
   ]
 }
