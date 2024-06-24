@@ -1,54 +1,55 @@
 import React from "react";
 import aboutImg from "../../assets/aboutusimage.png";
+import ceoImg from "../../assets/ceo.jpg";
+
 export default function About() {
   return (
-    <div>
-      <div>
-        <img className="" src={aboutImg} alt="aboutImg" />
+    <div className="my-5">
+      <div className="w-full flex items-center justify-center">
+        <img className="w-[150px] rounded-full " src={ceoImg} alt="ceoImg" />
       </div>
 
-      <div className=" w-full px-5 sm:px-10 md:px-32 flex items-center justify-center mb-5 mt-5">
-        <div>
-          <div className="colorprimary text-center mb-4 heading-size">
-            About Mithra Beds and Sofas
+      <p className="text-center text-[16px] colorsecondary font-semibold py-5">Message from the CEO</p>
+
+      <div className=" w-full  px-5 sm:px-10 md:px-32 flex items-center justify-center mb-5 mt-5">
+        <div className="Aglass p-3 md:p-10 ">
+          <div className="colorprimary font-hand  text-center mb-4 heading-size">
+            Welcome to Mithra Beds and Sofas.
           </div>
-          <p className="colorsecondary  my-3 leading-8 sm:leading-10 sm:text-[18px] ">
-            Mithra Enterprises, the best mattress manufacturer in Coimbatore,
-            was established in February 2018 with a dream of providing natural,
-            organic , quality, healthy sleep solutions. As a top mattress manufacturer in
-            Coimbatore, we specialize in crafting comfortable, supportive, and
-            healthy mattresses using natural materials like ilavam panju(Kapok)
-            ,latex, coir and that resonate with environmentally-conscious
-            consumers seeking sustainable bedding products aligned with their
-            values.
+          <p className=" font-hand my-3 leading-8 sm:leading-10 sm:text-[18px] ">
+            I am Mrs. Malini, the proud CEO of Mithra Enterprises and the
+            visionary behind Mithra Beds and Sofas. With a background as a
+            Masters-qualified Physician Assistant and over a decade of
+            experience assisting cardiac surgeons in top-tier heart care
+            hospitals, I transitioned into the business world, driven by a
+            passion for innovation and sustainability. During this time, I also
+            earned a Master’s in Business Administration with a specialization
+            in Operations Management.
           </p>
-          <p className="colorsecondary  my-3 leading-8 sm:leading-10 sm:text-[18px] ">
-            Our commitment to quality is evident in the careful attention to
-            detail and skilled craftsmanship that goes into each mattress we
-            construct. Every product, whether a latex mattress, Kapok/ ilavam
-            panju mattress, Coir with kapok( ilavam panju) mattress, sofa
-            makeover, pillows, or sofa manufacturing, must meet the highest
-            standards of durability and provide the necessary support and
-            comfort for a healthy, restful night's sleep. As a renowned bed
-            manufacturer in Coimbatore, we ensure optimal spinal alignment and
-            pressure relief in our all mattresses designs.
+          <p className=" font-hand my-3 leading-8 sm:leading-10 sm:text-[18px] ">
+            My journey into entrepreneurship began in February 2018, fueled by a
+            strong desire to create products that are both eco-friendly and
+            beneficial for our health. After years in the medical field, I
+            realized the importance of the materials we surround ourselves with
+            daily. I was particularly struck by the lack of transparency in the
+            mattress industry, where many products are chemically treated,
+            offering little information about their manufacturing processes.
+            This concern led me to question how we can spend nearly a third of
+            our lives on mattresses without knowing their impact on our health
+            and the environment.
           </p>
-          <p className="colorsecondary my-3  leading-8 sm:leading-10 sm:text-[18px] ">
-            Customer satisfaction is paramount at Mithra Enterprises. We
-            understand that choosing a best mattress is an important investment
-            decision, so we aim to provide excellent customer service to assist
-            you in selecting the perfect mattress tailored to your age, weight,
-            health condition, sleeping position, and preferences.
+          <p className=" my-3 font-hand leading-8 sm:leading-10 sm:text-[18px] ">
+            This realization inspired the foundation of Mithra Beds and Sofas.
+            Our mission is to thoughtfully craft mattresses and sofas that
+            prioritize both your well-being and the planet. We are committed to
+            using natural, sustainable materials, ensuring that our products
+            provide comfort and peace of mind.
           </p>
-          <p className="colorsecondary my-3 leading-8 sm:leading-10 sm:text-[18px] ">
-            We offer a wide range of mattress options including our signature
-            Illavam Panju/ Kapok mattress to accommodate different sleeping
-            styles, whether you prefer a firmer or plushier feel. Our focus on
-            traditional organic materials, innovative mattress technologies, and
-            modern craftsmanship allows us to deliver a superior sleep
-            experience as one of the top mattress brands in Coimbatore.
+          <p className="colorsecondar text-center  font-hand my-5 leading-8 sm:leading-10 sm:text-[18px] ">
+            Thank you for joining us on this journey towards a healthier, more
+            sustainable future...
           </p>
-          <p className="colorsecondary my-3 leading-8 sm:leading-10 sm:text-[18px] ">
+          {/* <p className="colorsecondary my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             What sets us apart is our commitment to using 100% organic cotton
             sourced directly from farmers who receive fair prices for their
             yields, allowing them to avoid pesticides, GMOs, and associated
@@ -62,7 +63,7 @@ export default function About() {
             Enterprises, the leading mattress company in Coimbatore, to provide
             the quality, sustainability, and customer-centric approach you've
             been dreaming of for your sleep sanctuary.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
