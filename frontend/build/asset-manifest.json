@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.17239978.css",
-    "main.js": "/static/js/main.a7823b7c.js",
+    "main.js": "/static/js/main.5266e02c.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/ceo.jpg": "/static/media/ceo.179becd7f097f2b79678.jpg",
     "static/media/Banner02.png": "/static/media/Banner02.4989fda78c413ce3d9c2.png",
-    "static/media/Banner01.png": "/static/media/Banner01.f79d2a71fca5cf4bcbe7.png",
+    "static/media/Banner01.png": "/static/media/Banner01.8ed236ad9572cf8c0e5d.png",
     "static/media/aboutusimage.png": "/static/media/aboutusimage.115d8ec82155d7b7f7ce.png",
     "static/media/Banner03.png": "/static/media/Banner03.dabd37baa7a92d8aabb8.png",
     "static/media/trust.jpg": "/static/media/trust.061dc130fa11bfe21617.jpg",
@@ -18,11 +18,11 @@
     "static/media/regulateheats.png": "/static/media/regulateheats.53d297e7e62f688a5e86.png",
     "index.html": "/index.html",
     "main.17239978.css.map": "/static/css/main.17239978.css.map",
-    "main.a7823b7c.js.map": "/static/js/main.a7823b7c.js.map",
+    "main.5266e02c.js.map": "/static/js/main.5266e02c.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17239978.css",
-    "static/js/main.a7823b7c.js"
+    "static/js/main.5266e02c.js"
   ]
 }
