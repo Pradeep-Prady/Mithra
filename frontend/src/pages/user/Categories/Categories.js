@@ -91,8 +91,8 @@ export default function Categories() {
         <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {specs?.map((spec) => (
             <div className="col-md-4 text-center my-7 flex flex-col items-center justify-center">
-              <div className="w-[130px] bg-[#ffc0cb67] p-5 rounded-full">
-                <img src={spec?.img} width="100px" alt="" />
+              <div className="w-[120px] h-[120px] bg-[#ffc0cb67] flex items-center justify-center p-5 rounded-full">
+                <img src={spec?.img} width="60px" alt="" />
               </div>
               <h5 className="colorprimary font-bold text-[20px] mt-3">
                 {spec?.name}
