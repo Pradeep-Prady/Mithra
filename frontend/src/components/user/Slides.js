@@ -8,9 +8,10 @@ import "./cards/styles/swiper-custom.css";
 import Banner1 from "../../assets/Banner01.png";
 import Banner2 from "../../assets/Banner02.png";
 import Banner3 from "../../assets/Banner03.png";
+import Banner4 from "../../assets/Banner04.png";
 
 export default function Slides() {
-  const images = [Banner1, Banner2, Banner3];
+  const images = [Banner1, Banner2, Banner3, Banner4];
 
   return (
     <div className="w-full h-auto px-2 md:px-5 md:rounded-[60px] overflow-hidden">
