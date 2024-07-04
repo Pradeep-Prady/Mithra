@@ -1,5 +1,4 @@
 import React from "react";
-import aboutImg from "../../assets/aboutusimage.png";
 import ceoImg from "../../assets/ceo.jpg";
 
 export default function About() {
@@ -9,7 +8,9 @@ export default function About() {
         <img className="w-[150px] rounded-full " src={ceoImg} alt="ceoImg" />
       </div>
 
-      <p className="text-center text-[16px] colorsecondary font-semibold py-5">Message from the CEO</p>
+      <p className="text-center text-[16px] colorsecondary font-semibold py-5">
+        Message from the CEO
+      </p>
 
       <div className=" w-full  px-5 sm:px-10 md:px-32 flex items-center justify-center mb-5 mt-5">
         <div className="Aglass p-3 md:p-10 ">

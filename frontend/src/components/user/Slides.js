@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./cards/styles/swiper-custom.css";
-import Banner1 from "../../assets/Banner01.png";
-import Banner2 from "../../assets/Banner02.png";
-import Banner3 from "../../assets/Banner03.png";
-import Banner4 from "../../assets/Banner04.png";
+import Banner1 from "../../assets/Banner01.jpg";
+import Banner2 from "../../assets/Banner02.jpg";
+import Banner3 from "../../assets/Banner03.jpg";
+import Banner4 from "../../assets/Banner04.jpg";
 
 export default function Slides() {
   const images = [Banner1, Banner2, Banner3, Banner4];
