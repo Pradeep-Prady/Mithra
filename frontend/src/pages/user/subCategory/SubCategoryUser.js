@@ -28,7 +28,7 @@ export default function SubCategoryUser() {
       ) : (
         <>
           <div>
-            <h1  className="colorprimary text-center text-3xl mb-1">
+            <h1  className="colorprimary text-center text-3xl my-5">
               Sub categories in {name}
             </h1>
             <p  className="colorsecondary text-center my-2 ">

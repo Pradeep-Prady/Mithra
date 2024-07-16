@@ -17,35 +17,6 @@ export default function Navbar() {
       nav: "About Us",
       link: "/about",
     },
-    // {
-    //   nav: "Mattresses",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Pillows",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-
-    // {
-    //   nav: "Sofa Makeover",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Furniture",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Bedroom Accessories",
-    //   link: "/subcategory/661e1b1b5192dc474ddad172",
-    // },
-    // {
-    //   nav: "Awards",
-    //   link: "/awards",
-    // },
-    // {
-    //   nav: "Others",
-    //   link: "/",
-    // },
   ];
 
   const navLinks2 = [
@@ -73,8 +44,8 @@ export default function Navbar() {
         <Header />
         <div className="px-20 flex items-center justify-center w-full border-b-2 shadow-md py-10  ">
           <div className="flex flex-wrap justify-center items-center font-light gap-7">
-            {navLinks.map((item) => (
-              <div>
+            {navLinks.map((item,i) => (
+              <div key={i}>
                 <Link
                   className="cursor-pointer hover:font-medium"
                   to={item.link}
@@ -99,8 +70,8 @@ export default function Navbar() {
             <Link to="/contact" className="ursor-pointer hover:font-medium">
               Contact
             </Link>
-            {navLinks2.map((item) => (
-              <div>
+            {navLinks2.map((item,i) => (
+              <div key={i}>
                 <Link
                   className="cursor-pointer hover:font-medium"
                   to={item.link}
@@ -125,8 +96,8 @@ export default function Navbar() {
 
         {open && (
           <div className="absolute z-40 px-2 ease-in-out duration-1000 bg-myrose w-full top-[40px]">
-            {navLinks.map((item) => (
-              <div className="my-4 text-white">
+            {navLinks.map((item,i) => (
+              <div className="my-4 text-white" key={i}>
                 <a
                   className="cursor-pointer hover:font-medium"
                   href={item.link}
@@ -147,8 +118,8 @@ export default function Navbar() {
                 ))}
 
               <div className="w-full items-start  text-white flex flex-col">
-                {navLinks2.map((item) => (
-                  <div className="my-2">
+                {navLinks2.map((item,i) => (
+                  <div className="my-2" key={i}>
                     <Link
                       className="cursor-pointer  hover:font-medium"
                       to={item.link}

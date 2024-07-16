@@ -6,11 +6,9 @@ import Footer from "../../components/user/Footer";
 export default function Main() {
   return (
     <div>
-      <div>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </div>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
   );
 }

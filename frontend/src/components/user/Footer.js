@@ -33,16 +33,28 @@ export default function Footer() {
 
   return (
     <div className="bg-[#ffc0cb63] py-10  px-5 sm:px-10 md:px-32 ">
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-5">
         <div className="w-full">
           <div className="">
             <img className="h-[60px]" src={mainImg} alt="mainImg" />
           </div>
 
-          <div className="w-full flex items-center justify-center">
+          <div className="my-5 text- leading-7 text-justify">
+            <p>
+              Mithra Enterprises, established in February 2018, has swiftly
+              risen to become the best mattress manufacturer in Coimbatore,
+              driven by their dream of providing natural, organic, quality, and
+              healthy sleep solutions. As the top mattress shop in the city,
+              Mithra specializes in crafting comfortable, supportive, and
+              healthy mattresses using eco-friendly materials like ilavam panju
+              (Kapok), latex, and coir.
+            </p>
+          </div>
+
+          {/* <div className="w-full flex items-center justify-center">
             <div className="w-5/6">
-              {navLinks.map((nav) => (
-                <Link to={nav.link} className="text-[16px] my-3 ">
+              {navLinks.map((nav,i) => (
+                <Link to={nav.link} className="text-[16px] my-3 " key={i}>
                   <p className="my-3 hover:font-semibold hover:tracking-wide">
                     {nav.nav}
                   </p>
@@ -60,8 +72,8 @@ export default function Footer() {
                   ))}
 
                 <div className="w-full items-start  flex flex-col">
-                  {navLinks2.map((item) => (
-                    <div className="my-2">
+                  {navLinks2.map((item,i) => (
+                    <div className="my-2" key={i}>
                       <Link
                         className="cursor-pointer  hover:font-medium"
                         to={item.link}
@@ -73,11 +85,50 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+          </div> */}
+        </div>
+
+        <div className="w-full md:mt-[80px] flex flex-col md:items-center justify-start">
+          <div className="md:w-5/6">
+            <p className="font-bold w-full flex items-start justify-start text-start">
+              Info
+            </p>
+            {navLinks.map((nav, i) => (
+              <Link to={nav.link} className="text-[16px] my-3 " key={i}>
+                <p className="my-3 hover:font-semibold hover:tracking-wide">
+                  {nav.nav}
+                </p>
+              </Link>
+            ))}
+
+            <div className="w-full items-start my-3 flex flex-col text-black">
+              {categoriesForNav?.length > 0 &&
+                categoriesForNav?.map((category) => (
+                  <DropDownSm
+                    color={"black"}
+                    key={category._id}
+                    category={category}
+                  />
+                ))}
+
+              <div className="w-full items-start  flex flex-col">
+                {navLinks2.map((item, i) => (
+                  <div className="my-2" key={i}>
+                    <Link
+                      className="cursor-pointer  hover:font-medium"
+                      to={item.link}
+                    >
+                      {item.nav}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="w-full flex items-center justify-center">
-          <div className="w-5/6">
+        <div className="w-full flex md:mt-[80px] items-center justify-center">
+          <div className="md:w-5/6">
             <div>
               <div className="mt-3">
                 <span>
@@ -134,8 +185,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-full flex i justify-center">
-          <div className="w-5/6">
+        <div className="w-full flex  md:mt-[80px]   md:justify-center">
+          <div className="md:w-5/6">
             <p className="font-bold md:ms-5">
               <span>Follow us on </span>
             </p>

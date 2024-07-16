@@ -14,10 +14,10 @@ export default function About() {
 
       <div className=" w-full  px-5 sm:px-10 md:px-32 flex items-center justify-center mb-5 mt-5">
         <div className="Aglass p-3 md:p-10 ">
-          <div className="colorprimary font-hand  text-center mb-4 heading-size">
+          <div className="colorprimary font-han   text-center mb-4 heading-size">
             Welcome to Mithra Beds and Sofas.
           </div>
-          <p className=" font-hand my-3 leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className=" font-han my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             I am Mrs. Malini, the proud CEO of Mithra Enterprises and the
             visionary behind Mithra Beds and Sofas. With a background as a
             Masters-qualified Physician Assistant and over a decade of
@@ -27,7 +27,7 @@ export default function About() {
             earned a Master’s in Business Administration with a specialization
             in Operations Management.
           </p>
-          <p className=" font-hand my-3 leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className=" font-han my-3 leading-8 sm:leading-10 sm:text-[18px] ">
             My journey into entrepreneurship began in February 2018, fueled by a
             strong desire to create products that are both eco-friendly and
             beneficial for our health. After years in the medical field, I
@@ -39,14 +39,14 @@ export default function About() {
             our lives on mattresses without knowing their impact on our health
             and the environment.
           </p>
-          <p className=" my-3 font-hand leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className=" my-3 font-han leading-8 sm:leading-10 sm:text-[18px] ">
             This realization inspired the foundation of Mithra Beds and Sofas.
             Our mission is to thoughtfully craft mattresses and sofas that
             prioritize both your well-being and the planet. We are committed to
             using natural, sustainable materials, ensuring that our products
             provide comfort and peace of mind.
           </p>
-          <p className="colorsecondar text-center  font-hand my-5 leading-8 sm:leading-10 sm:text-[18px] ">
+          <p className="colorsecondar text-center  font-han my-5 leading-8 sm:leading-10 sm:text-[18px] ">
             Thank you for joining us on this journey towards a healthier, more
             sustainable future...
           </p>

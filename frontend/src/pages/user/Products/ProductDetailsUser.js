@@ -24,16 +24,19 @@ export default function ProductDetailsUser() {
         </>
       ) : (
         <>
-          <div className="bg-[#f5f5f5] py-3 sm:py-10">
-            <div className="w-full  flex items-center justify-center">
-              <ProductSlider images={product?.images} />
-            </div>
 
-            <div className=" px-5  py-5 sm:px-10 md:px-32 ">
-              <h2 className="text-center border-b-2 pb-5 text-[20px] font-semibold">
+          <div className="bg-[#f5f5f5] py-3 sm:py-10">
+
+          <div className=" px-5  py-5 sm:px-10 md:px-32 ">
+              <h2 className="text-center pb-5 text-[20px] md:text-[26px] font-semibold">
                 {product?.name}
               </h2>
             </div>
+            <div className="w-full  border-b-2  pb-5 flex items-center justify-center">
+              <ProductSlider images={product?.images} />
+            </div>
+
+           
 
             <div className="w-full  px-5 sm:px-10 md:px-72 ">
               <div className="border-b-2 py-1 sm:py-10">

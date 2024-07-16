@@ -74,30 +74,32 @@ export default function Contact() {
 
         <div className="my-5">
           <form
-            className="bg-[#ffc0cb67] rounded-3xl flex flex-col items-center justify-center"
+            className="bg-[#ffc0cb67   contact-glass rounded-3xl flex flex-col items-center justify-center"
             onSubmit={sendEmail}
             ref={form}
           >
             <div>
-              <p className="my-5 text-2xl">Get In Touch</p>
+              <p className="my-5 text-2xl font-semibold text-myblue">Get In Touch</p>
             </div>
-            <div className="w-5/6 sm:w-4/6 my-3">
-              <div className="relative w-full my-3 rounded-sm">
+            <div className="w-5/6 sm:w-4/6 my-3 ">
+              <h4 className="font-medium text-[17px]">Name</h4>
+              <div className="relative w-full mb-3 rounded-sm ">
                 <input
                   type="text"
-                  placeholder=" "
+                  placeholder="Enter your name"
                   name="user_name"
+                  required
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                   onFocus={() => setNameFocused(true)}
                   onBlur={() => setNameFocused(false)}
-                  className="w-full outline-none rounded-md"
+                  className="w-full outline-none rounded-md border-2 border-myrose"
                   style={{
                     padding: "18px 10px",
                     marginTop: "12px",
                   }}
                 />
-                <label
+                {/* <label
                   style={{
                     position: "absolute",
                     top: nameFocused || name ? "14px" : "30px",
@@ -109,25 +111,30 @@ export default function Contact() {
                   for="name"
                 >
                   Name
-                </label>
+                </label> */}
               </div>
 
-              <div className="relative w-full my-3 rounded-sm">
+              <h4 className="font-medium text-[17px]">Phone Number</h4>
+
+
+              <div className="relative w-full mb-3 rounded-sm">
                 <input
                   type="numbber"
-                  placeholder=" "
+                  placeholder="Enter your phone number"
                   name="phone"
+                  required
+
                   onChange={(e) => setPhone(e.target.value)}
                   value={phone}
                   onFocus={() => setPhoneFocused(true)}
                   onBlur={() => setPhoneFocused(false)}
-                  className="w-full outline-none rounded-md"
+                  className="w-full outline-none rounded-md border-2 border-myrose "
                   style={{
                     padding: "18px 10px",
                     marginTop: "12px",
                   }}
                 />
-                <label
+                {/* <label
                   style={{
                     position: "absolute",
                     top: phoneFocused || phone ? "14px" : "30px",
@@ -139,25 +146,29 @@ export default function Contact() {
                   for="phone"
                 >
                   Phone
-                </label>
+                </label> */}
               </div>
 
-              <div className="relative w-full my-3 rounded-sm">
+              <h4 className="font-medium text-[17px]">Email</h4>
+
+              <div className="relative w-full mb-3 rounded-sm">
                 <input
                   type="email"
-                  placeholder=" "
+                  placeholder="Enter your email"
                   name="email"
+                  required
+
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   onFocus={() => setEmailFocused(true)}
                   onBlur={() => setEmailFocused(false)}
-                  className="w-full outline-none rounded-md"
+                  className="w-full outline-none rounded-md border-2 border-myrose"
                   style={{
                     padding: "18px 10px",
                     marginTop: "12px",
                   }}
                 />
-                <label
+                {/* <label
                   style={{
                     position: "absolute",
                     top: emailFocused || email ? "14px" : "30px",
@@ -169,18 +180,23 @@ export default function Contact() {
                   for="phone"
                 >
                   Email
-                </label>
+                </label> */}
               </div>
 
-              <div className="relative w-full my-3 rounded-sm">
+              <h4 className="font-medium text-[17px]  ">Message</h4>
+
+
+              <div className="relative w-full mb-3 rounded-sm ">
                 <textarea
                   type="numbber"
-                  placeholder=" "
+                  placeholder="Enter your message"
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
+                  required
+
                   onFocus={() => setMessageFocused(true)}
                   onBlur={() => setMessageFocused(false)}
-                  className="w-full outline-none rounded-md"
+                  className="w-full outline-none rounded-md border-2  border-myrose"
                   name="message"
                   htmlFor="text"
                   rows={4}
@@ -190,7 +206,7 @@ export default function Contact() {
                     resize: "none",
                   }}
                 ></textarea>
-                <label
+                {/* <label
                   style={{
                     position: "absolute",
                     top: messageFocused || message ? "14px" : "30px",
@@ -202,7 +218,7 @@ export default function Contact() {
                   for="phone"
                 >
                   Message
-                </label>
+                </label> */}
               </div>
               {/*  */}
 
@@ -256,7 +272,7 @@ export default function Contact() {
                 type="submit"
                 className="bg-myrose text-white font-semibold w-5/6 sm:w-4/6 text-center py-3 rounded-lg"
               >
-                Send Message
+                Send
               </button>
             </div>
           </form>
