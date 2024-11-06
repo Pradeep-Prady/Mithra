@@ -99,33 +99,66 @@ export default function CreateProduct() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    const imagesArray = [
-      mainImage,
-      frontImage,
-      rightImage,
-      backImage,
-      leftImage,
-    ];
-    const previews = [];
-
-    imagesArray.forEach((file, index) => {
-      previews.push(file);
-    });
-
+  
+    const imagesArray = [];
+  
+    // Conditionally push each image if it exists
+    if (mainImage) imagesArray.push(mainImage);
+    if (frontImage) imagesArray.push(frontImage);
+    if (rightImage) imagesArray.push(rightImage);
+    if (backImage) imagesArray.push(backImage);
+    if (leftImage) imagesArray.push(leftImage);
+  
     const formData = new FormData();
-    formData.append("name", name);
-
-    imagesArray?.forEach((image) => {
+    
+    // Conditionally add 'name' if it exists
+    if (name) formData.append("name", name);
+  
+    // Append each image in the array to formData
+    imagesArray.forEach((image) => {
       formData.append("images", image);
     });
-    formData.append("description", descriptionEditorValue);
-    formData.append("subCategory", subCategory);
-    formData.append("specification", specificationEditorValue);
-    formData.append("additionalinfo", additionalinfoEditorValue);
-
+  
+    // Conditionally add other fields if they exist
+    if (descriptionEditorValue) formData.append("description", descriptionEditorValue);
+    if (subCategory) formData.append("subCategory", subCategory);
+    if (specificationEditorValue) formData.append("specification", specificationEditorValue);
+    if (additionalinfoEditorValue) formData.append("additionalinfo", additionalinfoEditorValue);
+  
+    // Dispatch action with form data
     dispatch(createProduct(formData));
   };
+  
+
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+
+  //   const imagesArray = [
+  //     mainImage,
+  //     frontImage,
+  //     rightImage,
+  //     backImage,
+  //     leftImage,
+  //   ];
+  //   const previews = [];
+
+  //   imagesArray.forEach((file, index) => {
+  //     previews.push(file);
+  //   });
+
+  //   const formData = new FormData();
+  //   formData.append("name", name);
+
+  //   imagesArray?.forEach((image) => {
+  //     formData.append("images", image);
+  //   });
+  //   formData.append("description", descriptionEditorValue);
+  //   formData.append("subCategory", subCategory);
+  //   formData.append("specification", specificationEditorValue);
+  //   formData.append("additionalinfo", additionalinfoEditorValue);
+
+  //   dispatch(createProduct(formData));
+  // };
 
   useEffect(() => {
     if (isProductCreated) {
@@ -203,7 +236,7 @@ export default function CreateProduct() {
                 className="px-2 py-2.5 text-black my-2 outline-none "
                 type="file"
                 name="front image"
-                required
+                // required
                 onChange={onFrontImageChange}
                 // onChange={onImagesChange}
               />
@@ -226,7 +259,7 @@ export default function CreateProduct() {
                 className="px-2 py-2.5 text-black my-2 outline-none "
                 type="file"
                 name="right image"
-                required
+                // required
                 onChange={onRightImageChange}
                 // onChange={onImagesChange}
               />
@@ -249,7 +282,7 @@ export default function CreateProduct() {
                 className="px-2 py-2.5 text-black my-2 outline-none "
                 type="file"
                 name="left image"
-                required
+                // required
                 onChange={onLeftImageChange}
                 // onChange={onImagesChange}
               />
@@ -273,7 +306,7 @@ export default function CreateProduct() {
                 className="px-2 py-2.5 text-black my-2 outline-none "
                 type="file"
                 name="back image"
-                required
+                // required
                 onChange={onBackImageChange}
                 // onChange={onImagesChange}
               />

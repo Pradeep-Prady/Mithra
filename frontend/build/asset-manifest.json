@@ -1,12 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.d91b0cf5.css",
-    "main.js": "/static/js/main.5aff6899.js",
+    "main.css": "/static/css/main.3cb0b794.css",
+    "main.js": "/static/js/main.c6d56e4e.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/ceo.jpg": "/static/media/ceo.179becd7f097f2b79678.jpg",
-    "static/media/Banner02.jpg": "/static/media/Banner02.e91e361bee6d715e609b.jpg",
-    "static/media/Banner04.jpg": "/static/media/Banner04.4ce92ab51fb3396c3d08.jpg",
-    "static/media/Banner01.jpg": "/static/media/Banner01.1cb681f3b71f1ece71a9.jpg",
+    "static/media/3.jpg": "/static/media/3.8f4baf81787cfc7befd8.jpg",
+    "static/media/4.jpg": "/static/media/4.f411d9d3f7069c7d5c2c.jpg",
+    "static/media/cot.png": "/static/media/cot.c173afb2b0d64c2c23fc.png",
+    "static/media/Mithra Tamil.jpg": "/static/media/Mithra Tamil.0e248d5ec5cba3737616.jpg",
+    "static/media/sofa.png": "/static/media/sofa.2ac86dd1a86fce8634b8.png",
+    "static/media/VetiverProducts.png": "/static/media/VetiverProducts.9c75622f6d15fef1fb87.png",
+    "static/media/ComfortandQuilt.jpg": "/static/media/ComfortandQuilt.1813fefe88abc13cd099.jpg",
+    "static/media/1.jpg": "/static/media/1.12d07ca37ed7ad60a1d2.jpg",
+    "static/media/2.jpg": "/static/media/2.2ad51317c28963a191df.jpg",
+    "static/media/BedCover.jpg": "/static/media/BedCover.60a49aa24d8f83accaf7.jpg",
+    "static/media/Pillowcover.jpg": "/static/media/Pillowcover.07a7e39c0b00cd3abe6a.jpg",
+    "static/media/illavampanjupillow.jpg": "/static/media/illavampanjupillow.a77cc4f14311d5fe91b5.jpg",
+    "static/media/MemoryFoamPillow.jpg": "/static/media/MemoryFoamPillow.043c06b220c5290c4cd3.jpg",
+    "static/media/vetiverPillow.jpg": "/static/media/vetiverPillow.8f94af7ba5a363aba1ea.jpg",
+    "static/media/latexpillow.jpg": "/static/media/latexpillow.c67b965d9ead5dddd370.jpg",
     "static/media/Banner03.jpg": "/static/media/Banner03.e5fc005f70053f1fdcba.jpg",
     "static/media/trust.jpg": "/static/media/trust.061dc130fa11bfe21617.jpg",
     "static/media/mithralogo.png": "/static/media/mithralogo.da860c9ba7231a0e1785.png",
@@ -17,12 +29,12 @@
     "static/media/recycle.png": "/static/media/recycle.5a38dddf305619c0a098.png",
     "static/media/regulateheats.png": "/static/media/regulateheats.53d297e7e62f688a5e86.png",
     "index.html": "/index.html",
-    "main.d91b0cf5.css.map": "/static/css/main.d91b0cf5.css.map",
-    "main.5aff6899.js.map": "/static/js/main.5aff6899.js.map",
+    "main.3cb0b794.css.map": "/static/css/main.3cb0b794.css.map",
+    "main.c6d56e4e.js.map": "/static/js/main.c6d56e4e.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d91b0cf5.css",
-    "static/js/main.5aff6899.js"
+    "static/css/main.3cb0b794.css",
+    "static/js/main.c6d56e4e.js"
   ]
 }

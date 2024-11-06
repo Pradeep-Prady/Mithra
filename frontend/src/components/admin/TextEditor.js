@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.snow.css"; // Quill's default theme styles
 
 const TextEditor = ({ initialEditorValue, onEditorChange }) => {
-  const [editorValue, setEditorValue] = useState(initialEditorValue);
+  const [editorValue, setEditorValue] = useState(initialEditorValue || "");
+
+  useEffect(() => {
+    setEditorValue(initialEditorValue || "");
+  }, [initialEditorValue]);
 
   const modules = {
     toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
+      [{ header: "1" }, { header: "2" }], // No font dropdown
       [{ size: [] }],
       ["bold", "italic", "underline", "strike", "blockquote"],
       [
@@ -23,7 +27,6 @@ const TextEditor = ({ initialEditorValue, onEditorChange }) => {
 
   const formats = [
     "header",
-    "font",
     "size",
     "bold",
     "italic",

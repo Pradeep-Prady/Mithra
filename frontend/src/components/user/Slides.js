@@ -142,13 +142,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./cards/styles/swiper-custom.css";
-import Banner1 from "../../assets/Banner01.jpg";
-import Banner2 from "../../assets/Banner02.jpg";
+// import Banner1 from "../../assets/Banner01.jpg";
+// import Banner2 from "../../assets/Banner02.jpg";
 import Banner3 from "../../assets/Banner03.jpg";
-import Banner4 from "../../assets/Banner04.jpg";
+// import Banner4 from "../../assets/Banner04.jpg";
+ 
 
+import VetiverProducts from "../../assets/home/VetiverProducts.png";
+import MithraTamil from "../../assets/home/Mithra Tamil.jpg";
+import img3 from "../../assets/home/3.jpg";
 export default function Slides() {
-  const images = [Banner1, Banner2, Banner3, Banner4];
+  const images = [ MithraTamil,img3, Banner3,VetiverProducts]; 
 
   return (
     <div className="w-full h-auto px-2 md:px-5 overflow-hidden">

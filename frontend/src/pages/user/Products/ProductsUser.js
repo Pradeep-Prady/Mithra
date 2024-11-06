@@ -17,6 +17,8 @@ export default function ProductsUser() {
     dispatch(getAllProduct(id));
   }, [dispatch, id]);
 
+  console.log(name)
+
   return (
     <>
       {loading ? (

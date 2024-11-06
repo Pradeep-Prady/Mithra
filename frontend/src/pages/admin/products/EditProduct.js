@@ -132,13 +132,14 @@ export default function EditProduct() {
     }
 
     // Append images and other form data
-    const imagesArray = [
-      mainImage,
-      frontImage,
-      rightImage,
-      backImage,
-      leftImage,
-    ];
+    const imagesArray = [];
+
+    // Conditionally push each image if it exists
+    if (mainImage) imagesArray.push(mainImage);
+    if (frontImage) imagesArray.push(frontImage);
+    if (rightImage) imagesArray.push(rightImage);
+    if (backImage) imagesArray.push(backImage);
+    if (leftImage) imagesArray.push(leftImage);
 
     imagesArray?.forEach((image) => {
       if (image) {
@@ -291,7 +292,7 @@ export default function EditProduct() {
                   className="px-2 py-2.5 text-black my-2 outline-none "
                   type="file"
                   name="front image"
-                  required
+                  // required
                   // value={frontImage}
                   onChange={onFrontImageChange}
                 />
@@ -316,7 +317,7 @@ export default function EditProduct() {
                   className="px-2 py-2.5 text-black my-2 outline-none "
                   type="file"
                   name="right image"
-                  required
+                  // required
                   // value={rightImage}
                   onChange={onRightImageChange}
                 />
@@ -342,7 +343,7 @@ export default function EditProduct() {
                   className="px-2 py-2.5 text-black my-2 outline-none "
                   type="file"
                   name="left image"
-                  required
+                  // required
                   // value={leftImage}
                   onChange={onLeftImageChange}
                 />
@@ -368,7 +369,7 @@ export default function EditProduct() {
                   className="px-2 py-2.5 text-black my-2 outline-none "
                   type="file"
                   name="back image"
-                  required
+                  // required
                   // value={backImage}
                   onChange={onBackImageChange}
                 />
