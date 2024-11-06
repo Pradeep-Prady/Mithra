@@ -30,8 +30,8 @@ export default function Dropdown({ category, handleClose }) {
             <div className="py-1">
               {category?.subCategories &&
                 category?.subCategories?.length > 0 &&
-                category?.subCategories?.map((item) => (
-                  <Menu.Item>
+                category?.subCategories?.map((item,i) => (
+                  <Menu.Item key={i}>
                     {({ active }) => (
                       <Link
                         onClick={handleClose}

@@ -56,7 +56,7 @@ export default function SubCategoryUser() {
   };
 
   useEffect(() => {
-    if (name.trim() === "Bedroom Accessories") {
+    if (name?.trim() === "Bedroom Accessories") {
       setBanners([
         BedCover,
         ComfortandQuilt,
@@ -74,7 +74,7 @@ export default function SubCategoryUser() {
     } else if (name?.trim() === "Mattress") {
       setBanners([img1, img2, img4]);
     } else {
-      console.log("e;se", name);
+     
       setBanners([]);
     }
   }, [name]);

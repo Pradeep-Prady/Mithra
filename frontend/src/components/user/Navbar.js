@@ -55,9 +55,9 @@ export default function Navbar() {
               </div>
             ))}
             {categoriesForNav?.length > 0 &&
-              categoriesForNav?.map((category) => (
+              categoriesForNav?.map((category,i) => (
                 <Dropdown
-                  key={category._id}
+                  key={i}
                   category={category}
                   handleClose={handleClose}
                 />
@@ -109,9 +109,9 @@ export default function Navbar() {
 
             <div className="w-full items-start my-4 text-white flex flex-col">
               {categoriesForNav?.length > 0 &&
-                categoriesForNav?.map((category) => (
+                categoriesForNav?.map((category,i) => (
                   <DropDownSm
-                    key={category._id}
+                    key={i}
                     category={category}
                     handleClose={handleClose}
                   />

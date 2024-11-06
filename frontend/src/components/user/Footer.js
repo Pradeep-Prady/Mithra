@@ -103,10 +103,10 @@ export default function Footer() {
 
             <div className="w-full items-start my-3 flex flex-col text-black">
               {categoriesForNav?.length > 0 &&
-                categoriesForNav?.map((category) => (
+                categoriesForNav?.map((category,i) => (
                   <DropDownSm
                     color={"black"}
-                    key={category._id}
+                    key={i}
                     category={category}
                   />
                 ))}

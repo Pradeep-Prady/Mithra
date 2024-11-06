@@ -32,8 +32,8 @@ export default function DropDownSm({ category, handleClose, color }) {
               <div className="py-1">
                 {category?.subCategories &&
                   category?.subCategories?.length > 0 &&
-                  category?.subCategories?.map((item) => (
-                    <Menu.Item>
+                  category?.subCategories?.map((item,i) => (
+                    <Menu.Item key={i}>
                       {({ active }) => (
                         <Link
                           to={`/products/${item._id}`}
