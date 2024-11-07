@@ -12,12 +12,14 @@ import {
   logoutFail,
   logoutSuccess,
 } from "../slices/authSlice";
-import axios from "axios";
+import { axiosInstance } from "./axios";
+ 
+ 
 
 export const login = (username, password) => async (dispatch) => {
   try {
     dispatch(loginRequest());
-    const { data } = await axios.post(`/api/v1/admin/login`, {
+    const { data } = await axiosInstance.post(`/api/v1/admin/login`, {
       username,
       password,
     });
@@ -35,7 +37,7 @@ export const loadUser = () => {
   return async (dispatch) => {
     try {
       dispatch(loadUserRequest());
-      const { data } = await axios.get(`/api/v1/admin/me`);
+      const { data } = await axiosInstance.get(`/api/v1/admin/me`);
       dispatch(loadUserSuccess(data));
     } catch (error) {
       dispatch(loadUserFail(error?.response?.data?.message));
@@ -44,7 +46,7 @@ export const loadUser = () => {
 };
 export const logout = async (dispatch) => {
   try {
-    await axios.get(`/api/v1/admin/logout`);
+    await axiosInstance.get(`/api/v1/admin/logout`);
     dispatch(logoutSuccess());
   } catch (error) {
     dispatch(logoutFail(error.response.data.message));
@@ -55,7 +57,7 @@ export const getDashboard = () => {
   return async (dispatch) => {
     try {
       dispatch(loadDashboardRequest());
-      const { data } = await axios.get(`/api/v1/admin/dashboard`);
+      const { data } = await axiosInstance.get(`/api/v1/admin/dashboard`);
       dispatch(loadDashboardSuccess(data));
     } catch (error) {
       dispatch(loadDashboardFail(error?.response?.data?.message));

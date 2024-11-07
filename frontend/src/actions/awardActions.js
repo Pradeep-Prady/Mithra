@@ -1,4 +1,5 @@
-import axios from "axios";
+ 
+import { axiosInstance } from './axios';
 import {
   createAwardFailure,
   createAwardRequest,
@@ -26,7 +27,7 @@ export const createAward = (formData) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       `/api/v1/admin/create-award`,
       formData,
       config
@@ -40,7 +41,7 @@ export const createAward = (formData) => async (dispatch) => {
 export const getAllAward = () => async (dispatch) => {
   try {
     dispatch(getAllAwardRequest());
-    const { data } = await axios.get(`/api/v1/admin/awards`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/awards`);
     dispatch(getAllAwardSuccess(data));
   } catch (error) {
     dispatch(getAllAwardFailure(error?.response?.data?.message));
@@ -50,7 +51,7 @@ export const getAllAward = () => async (dispatch) => {
 export const getAward = (id) => async (dispatch) => {
   try {
     dispatch(getAwardRequest());
-    const { data } = await axios.get(`/api/v1/admin/award/${id}`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/award/${id}`);
     dispatch(getAwardSuccess(data));
   } catch (error) {
     dispatch(getAwardFailure(error?.response?.data?.message));
@@ -65,7 +66,7 @@ export const updateAward = (formData, id) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
-    const { data } = await axios.put(
+    const { data } = await axiosInstance.put(
       `/api/v1/admin/award/update/${id}`,
       formData,
       config
@@ -79,7 +80,7 @@ export const updateAward = (formData, id) => async (dispatch) => {
 export const deleteAward = (id) => async (dispatch) => {
   try {
     dispatch(deleteAwardRequest());
-    await axios.delete(`/api/v1/admin/award/delete/${id}`);
+    await axiosInstance.delete(`/api/v1/admin/award/delete/${id}`);
     dispatch(deleteAwardSuccess());
   } catch (error) {
     dispatch(deleteAwardFailure(error?.response?.data?.message));

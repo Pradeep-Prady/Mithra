@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.3cb0b794.css",
-    "main.js": "/static/js/main.c2c24132.js",
+    "main.css": "/static/css/main.dea3c789.css",
+    "main.js": "/static/js/main.43eefdeb.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
-    "static/media/ceo.jpg": "/static/media/ceo.179becd7f097f2b79678.jpg",
+    "static/media/designelement-2.svg": "/static/media/designelement-2.f327108594d2682b1c1d5e5028d30ef2.svg",
+    "static/media/Cracks.svg": "/static/media/Cracks.a028fedc665ed2628b6bd4d1b4ce4fcd.svg",
     "static/media/3.jpg": "/static/media/3.8f4baf81787cfc7befd8.jpg",
     "static/media/4.jpg": "/static/media/4.f411d9d3f7069c7d5c2c.jpg",
     "static/media/cot.png": "/static/media/cot.c173afb2b0d64c2c23fc.png",
@@ -19,6 +20,9 @@
     "static/media/MemoryFoamPillow.jpg": "/static/media/MemoryFoamPillow.043c06b220c5290c4cd3.jpg",
     "static/media/vetiverPillow.jpg": "/static/media/vetiverPillow.8f94af7ba5a363aba1ea.jpg",
     "static/media/latexpillow.jpg": "/static/media/latexpillow.c67b965d9ead5dddd370.jpg",
+    "static/media/designelement-1.svg": "/static/media/designelement-1.8ec21762bde2a9d6cfdfbe9b006cce52.svg",
+    "static/media/bg3.jpg": "/static/media/bg3.9f04df626a0bff78a6c6.jpg",
+    "static/media/ceo1.jpg": "/static/media/ceo1.b05ad8fd1bad7869171f.jpg",
     "static/media/Banner03.jpg": "/static/media/Banner03.e5fc005f70053f1fdcba.jpg",
     "static/media/trust.jpg": "/static/media/trust.061dc130fa11bfe21617.jpg",
     "static/media/mithralogo.png": "/static/media/mithralogo.da860c9ba7231a0e1785.png",
@@ -29,12 +33,12 @@
     "static/media/recycle.png": "/static/media/recycle.5a38dddf305619c0a098.png",
     "static/media/regulateheats.png": "/static/media/regulateheats.53d297e7e62f688a5e86.png",
     "index.html": "/index.html",
-    "main.3cb0b794.css.map": "/static/css/main.3cb0b794.css.map",
-    "main.c2c24132.js.map": "/static/js/main.c2c24132.js.map",
+    "main.dea3c789.css.map": "/static/css/main.dea3c789.css.map",
+    "main.43eefdeb.js.map": "/static/js/main.43eefdeb.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cb0b794.css",
-    "static/js/main.c2c24132.js"
+    "static/css/main.dea3c789.css",
+    "static/js/main.43eefdeb.js"
   ]
 }

@@ -1,4 +1,7 @@
 import axios from "axios";
+
+
+
 import {
   createTestimonialFailure,
   createTestimonialRequest,
@@ -16,6 +19,7 @@ import {
   updateTestimonialyFailure,
 } from "../slices/testimonialSlice";
 import { getAllCategoryFailure } from "../slices/categorySclice";
+import { axiosInstance } from "./axios";
 
 export const createTestimonial = (formData) => async (dispatch) => {
   try {
@@ -27,7 +31,7 @@ export const createTestimonial = (formData) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       `/api/v1/admin/create-testimonial`,
       formData,
       config
@@ -41,7 +45,7 @@ export const createTestimonial = (formData) => async (dispatch) => {
 export const getAllTestimonial = () => async (dispatch) => {
   try {
     dispatch(getAllTestimonialRequest());
-    const { data } = await axios.get(`/api/v1/admin/testimonials`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/testimonials`);
     dispatch(getAllTestimonialSuccess(data));
   } catch (error) {
     dispatch(getAllCategoryFailure(error?.response?.data?.message));
@@ -51,7 +55,7 @@ export const getAllTestimonial = () => async (dispatch) => {
 export const getTestimonial = (id) => async (dispatch) => {
   try {
     dispatch(getTestimonialRequest());
-    const { data } = await axios.get(`/api/v1/admin/testimonial/${id}`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/testimonial/${id}`);
     dispatch(getTestimonialSuccess(data));
   } catch (error) {
     dispatch(getTestimonialFailure(error?.response?.data?.message));
@@ -66,7 +70,7 @@ export const updateTestimonial = (formData, id) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
-    const { data } = await axios.put(
+    const { data } = await axiosInstance.put(
       `/api/v1/admin/testimonial/update/${id}`,
       formData,
       config
@@ -80,7 +84,7 @@ export const updateTestimonial = (formData, id) => async (dispatch) => {
 export const deleteTestimonial = (id) => async (dispatch) => {
   try {
     dispatch(deleteTestimonialRequest());
-    await axios.delete(`/api/v1/admin/testimonial/delete/${id}`);
+    await axiosInstance.delete(`/api/v1/admin/testimonial/delete/${id}`);
     dispatch(deleteTestimonialSuccess());
   } catch (error) {
     dispatch(deleteTestimonialFailure(error?.response?.data?.message));

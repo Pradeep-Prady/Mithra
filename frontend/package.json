@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@fireworks-js/react": "^2.10.8",
     "@headlessui/react": "^1.7.19",
     "@reduxjs/toolkit": "^2.2.3",
     "@testing-library/jest-dom": "^5.17.0",
@@ -19,9 +20,9 @@
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "redux-thunk": "^3.1.0",
+    "swiper": "^11.1.14",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:8000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

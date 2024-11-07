@@ -1,4 +1,7 @@
 import axios from "axios";
+
+
+
 import {
   createProductFailure,
   createProductRequest,
@@ -16,6 +19,7 @@ import {
   updateProductRequest,
   updateProductSuccess,
 } from "../slices/productSlice";
+import { axiosInstance } from "./axios";
 
 export const createProduct = (formData) => async (dispatch) => {
   try {
@@ -26,7 +30,7 @@ export const createProduct = (formData) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       `/api/v1/admin/create-product`,
       formData,
       config
@@ -41,7 +45,7 @@ export const getAllProduct = (subCategoryId) => async (dispatch) => {
   try {
     dispatch(getAllProductRequest());
 
-    const { data } = await axios.get(`/api/v1/admin/${subCategoryId}/products`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/${subCategoryId}/products`);
 
     
     dispatch(getAllProductSuccess(data));
@@ -53,7 +57,7 @@ export const getAllProduct = (subCategoryId) => async (dispatch) => {
 export const getProduct = (id) => async (dispatch) => {
   try {
     dispatch(getProductRequest());
-    const { data } = await axios.get(`/api/v1/admin/product/${id}`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/product/${id}`);
     dispatch(getProductSuccess(data));
   } catch (error) {
     dispatch(getProductFailure(error?.response?.data?.message));
@@ -68,7 +72,7 @@ export const updateProduct = (formData, id) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
-    const { data } = await axios.put(
+    const { data } = await axiosInstance.put(
       `/api/v1/admin/product/update/${id}`,
       formData,
 
@@ -83,7 +87,7 @@ export const updateProduct = (formData, id) => async (dispatch) => {
 export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch(deleteProductRequest());
-    await axios.delete(`/api/v1/admin/product/delete/${id}`);
+    await axiosInstance.delete(`/api/v1/admin/product/delete/${id}`);
     dispatch(deleteProductSuccess());
   } catch (error) {
     dispatch(deleteProductFailure(error?.response?.data?.message));

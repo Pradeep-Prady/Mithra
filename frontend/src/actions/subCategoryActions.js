@@ -1,4 +1,7 @@
 import axios from "axios";
+
+
+
 import {
   createSubCategoryFailure,
   createSubCategoryRequest,
@@ -16,6 +19,7 @@ import {
   updateSubCategoryRequest,
   updateSubCategorySuccess,
 } from "../slices/subCategorySclice";
+import { axiosInstance } from "./axios";
 
 export const createSubCategory = (formData) => async (dispatch) => {
   try {
@@ -26,7 +30,7 @@ export const createSubCategory = (formData) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       `/api/v1/admin/create-subcategory`,
       formData,
       config
@@ -40,7 +44,7 @@ export const createSubCategory = (formData) => async (dispatch) => {
 export const getAllSubCategory = (categoryId) => async (dispatch) => {
   try {
     dispatch(getAllSubCategoryRequest());
-    const { data } = await axios.get(
+    const { data } = await axiosInstance.get(
       `/api/v1/admin/${categoryId}/subcategories`
     );
 
@@ -53,7 +57,7 @@ export const getAllSubCategory = (categoryId) => async (dispatch) => {
 export const getSubCategory = (id) => async (dispatch) => {
   try {
     dispatch(getSubCategoryRequest());
-    const { data } = await axios.get(`/api/v1/admin/subcategory/${id}`);
+    const { data } = await axiosInstance.get(`/api/v1/admin/subcategory/${id}`);
     dispatch(getSubCategorySuccess(data));
   } catch (error) {
     dispatch(getSubCategoryFailure(error?.response?.data?.message));
@@ -68,7 +72,7 @@ export const updateSubCategory = (formData, id) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
-    const { data } = await axios.put(
+    const { data } = await axiosInstance.put(
       `/api/v1/admin/subcategory/update/${id}`,
       formData,
       config
@@ -82,7 +86,7 @@ export const updateSubCategory = (formData, id) => async (dispatch) => {
 export const deleteSubCategory = (id) => async (dispatch) => {
   try {
     dispatch(deleteSubCategoryRequest());
-    await axios.delete(`/api/v1/admin/subcategory/delete/${id}`);
+    await axiosInstance.delete(`/api/v1/admin/subcategory/delete/${id}`);
     dispatch(deleteSubCategorySuccess());
   } catch (error) {
     dispatch(deleteSubCategoryFailure(error?.response?.data?.message));
